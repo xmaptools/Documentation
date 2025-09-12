@@ -33,7 +33,7 @@ export default defineConfig({
 
     footer: {
       message: 'XMapTools - Quantitative compositional mapping',
-      copyright: 'Copyright © 2024 XMapTools'
+      copyright: 'Copyright © 2025 XMapTools'
     }
   }
 })
