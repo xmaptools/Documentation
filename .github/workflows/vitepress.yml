@@ -37,6 +37,12 @@ jobs:
         with:
           node-version: 20
           # cache: npm
+      
+      # Copy all images from src/assets to .vitepress/public/assets
+      - name: Copy assets to public
+        run: |
+          mkdir -p src/.vitepress/public/assets
+          cp -R src/assets/* src/.vitepress/public/assets/
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
