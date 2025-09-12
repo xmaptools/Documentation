@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: XMapTools App
+  name: XMapTools 4.5
   text: Quantitative compositional mapping
   tagline: Free and versatile software solution for chemical maps analysis
   actions:
@@ -11,36 +11,40 @@ hero:
       text: Getting Started
       link: /getting-started
     - theme: alt
-      text: XMapTools App on Github
-      link: https://github.com/xmaptools
+      text: Public repository
+      link: https://github.com/xmaptools/XMapTools_Public
     - theme: alt
-      text: Developer repository on GitHub
+      text: Developer repository
       link: https://github.com/xmaptools/XMapTools_Developers
   image:
     src: /assets/Logo_2025_square_512.Bmvdkxu7.png
     alt: XMapTools
 
 features:
-  - icon: 🚀
-    title: XMapTools App
+  - icon: 📚
+    title: Documentation
     details: Powerful tools for quantitative compositional mapping and analysis
-    link: /getting-started
-
-  - icon: 🛠️
-    title: XMapTools Videos
-    details: Video tutorials and demonstrations of XMapTools functionality
-    link: /videos
+    link: /documentation
 
   - icon: 💻
-    title: XMapTools Tutorials
-    details: Step-by-step guides and documentation for using XMapTools
+    title: Tutorials
+    details: Video tutorials and demonstrations of XMapTools functionality
     link: /tutorials
+
+  - icon: 🚀
+    title: Bingo-Antidote 
+    details: Step-by-step guides and documentation for using XMapTools
+    link: /bingo-antidote
 ---
-
-
 
 ## What is XMapTools?
 
-test
+XMapTools is an advanced analysis software for quantitative chemical analysis of solids in 1D, 2D and 3D.
 
-![XMapTools Logo](/assets/Logo_2025_square_512.png)
+It provides numerical tools and packages implemented in a guided and versatile environment that allows you to explore and visualise data in your own way.
+
+For example, XMapTools includes a wide range of data processing options including routines for classification, segmentation, calibration and visualisation via single and multi-channel maps or via binary, ternary and spider diagrams.
+
+![XMapTools Logo](/assets/XMapTools_Transition.jpg)
+
+
