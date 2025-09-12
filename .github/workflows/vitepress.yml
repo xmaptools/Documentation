@@ -39,10 +39,10 @@ jobs:
           # cache: npm
       
       # Copy all images from src/assets to .vitepress/public/assets
-      - name: Copy assets to public
-        run: |
-          mkdir -p .vitepress/public/assets
-          cp -R assets/* .vitepress/public/assets/
+      #- name: Copy assets to public
+      #  run: |
+      #    mkdir -p .vitepress/public/assets
+      #    cp -R assets/* .vitepress/public/assets/
           
       - name: List public folder
         run: ls -R .vitepress/public    
@@ -73,3 +73,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          path: .vitepress/dist
