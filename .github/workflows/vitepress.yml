@@ -38,11 +38,10 @@ jobs:
           node-version: 20
           # cache: npm
       
-      # Copy all images from src/assets to .vitepress/public/assets
-      #- name: Copy assets to public
-      #  run: |
-      #    mkdir -p .vitepress/public/assets
-      #    cp -R assets/* .vitepress/public/assets/
+      - name: Copy images into public
+        run: |
+          mkdir -p .vitepress/public
+          cp -R assets/* .vitepress/public/
           
       - name: List public folder
         run: ls -R .vitepress/public    
