@@ -48,3 +48,7 @@ For example, XMapTools includes a wide range of data processing options includin
 ![XMapTools Logo](/assets/XMapTools_Transition.jpg)
 
 
+![XMapTools Logo](/assets/Logo_2025_square_512.png){width=150px}
+
+
+
