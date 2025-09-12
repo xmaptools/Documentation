@@ -42,7 +42,10 @@ jobs:
       - name: Copy assets to public
         run: |
           mkdir -p .vitepress/public/assets
-          cp -R src/assets/* .vitepress/public/assets/
+          cp -R assets/* .vitepress/public/assets/
+          
+      - name: List public folder
+        run: ls -R .vitepress/public    
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
