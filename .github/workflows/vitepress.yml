@@ -55,6 +55,9 @@ jobs:
         
       - name: Build with VitePress
         run: npm run build
+        
+      - name: List dist folder
+        run: ls -R .vitepress/dist
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
