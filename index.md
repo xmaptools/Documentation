@@ -43,4 +43,4 @@ features:
 
 test
 
-![XMapTools Logo](../assets/Logo_square_512.png)
+![XMapTools Logo](/assets/Logo_square_512.png)
