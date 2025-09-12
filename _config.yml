@@ -1,0 +1,53 @@
+# Jekyll configuration for XMapTools Documentation
+title: XMapTools Documentation
+description: Official documentation for XMapTools 4
+baseurl: "/Documentation" # the subpath of your site, e.g. /blog
+url: "https://xmaptools.github.io" # the base hostname & protocol for your site
+
+# GitHub Pages compatibility
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Collections for documentation
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Navigation
+header_pages:
+  - docs/index.md
+  - docs/getting-started.md
+  - docs/user-guide.md
+  - docs/api-reference.md
