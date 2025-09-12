@@ -8,7 +8,7 @@ export default defineConfig({
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: 'src/assets/Logo_square_512.png',
+    logo: 'assets/Logo_square_512.png',
     
     nav: [
       { text: 'Home', link: '/' },
