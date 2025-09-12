@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import logo from '../assets/Logo_square_512.png'  // adjust relative path
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,7 +9,7 @@ export default defineConfig({
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '../assets/Logo_square_512.png',
+    logo,
     
     nav: [
       { text: 'Home', link: '/' },
