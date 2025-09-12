@@ -17,7 +17,7 @@ hero:
       text: Developer repository on GitHub
       link: https://github.com/xmaptools/XMapTools_Developers
   image:
-    src: /Documentation/Logo_square_512.png
+    src: /assets/Logo_square_512.DnpqVCjk.png
     alt: XMapTools
 
 features:
