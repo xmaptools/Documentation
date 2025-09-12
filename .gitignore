@@ -1,16 +1,14 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# VitePress
+src/.vitepress/dist/
+src/.vitepress/cache/
 
-# Bundler
-vendor/
-.bundle/
-
-# Ruby
-*.gem
-Gemfile.lock
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
 
 # OS generated files
 .DS_Store

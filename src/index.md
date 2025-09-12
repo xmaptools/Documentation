@@ -1,4 +1,3 @@
-```@raw html
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
@@ -10,34 +9,33 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /test
+      link: /getting-started
     - theme: alt
       text: XMapTools App on Github
-      link: /test
+      link: https://github.com/xmaptools
     - theme: alt
       text: Developer repository on GitHub
       link: https://github.com/xmaptools/XMapTools_Developers
   image:
-    src: /logo_MAGEMin_julia.png
-    alt: MAGEMin
+    src: /assets/Logo_square_512.png
+    alt: XMapTools
 
 features:
   - icon: 🚀
     title: XMapTools App
-    details: XXXX
-    link: /test
+    details: Powerful tools for quantitative compositional mapping and analysis
+    link: /getting-started
 
   - icon: 🛠️
     title: XMapTools Videos
-    details: Set of function to freely compute phase equilibrium in Julia
-    link: /test
+    details: Video tutorials and demonstrations of XMapTools functionality
+    link: /videos
 
   - icon: 💻
     title: XMapTools Tutorials
-    details: C program backend of MAGEMin
-    link: /test
+    details: Step-by-step guides and documentation for using XMapTools
+    link: /tutorials
 ---
-```
 
 
 

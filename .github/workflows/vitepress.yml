@@ -1,4 +1,4 @@
-name: Build and Deploy Jekyll Site
+name: Build and Deploy VitePress Site
 
 # Triggers the workflow on push and pull request events for the main branch
 on:
@@ -29,24 +29,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
           
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v4
         
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build with VitePress
+        run: npm run build
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: src/.vitepress/dist
 
   # Deployment job
   deploy:
