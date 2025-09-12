@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev src",
-    "build": "vitepress build src",
-    "preview": "vitepress preview src"
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
     "vitepress": "^1.3.4"
