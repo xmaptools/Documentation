@@ -52,16 +52,16 @@ When the program is ready, a dialog box opens; pick the working directory __Tuto
 
 ### Import maps
 
-1. In the first workspace "PROJECT & IMPORT", click on the button "Import" ![alt text](/assets/323-add.png) (Import Maps) to open the Import Tool module.
+1. In the first workspace "PROJECT & IMPORT", click on the "Import" button (Import Maps) to open the Import Tool module. <img src="/assets/323-add.png" alt="drawing" width="18"/>
 2. Select all the map files to be imported and click on the button "Open". Note that you can select all the text files available in the folder and XMapTools will find out which ones can be imported as maps.
 3. In the tab "Corrections", change the value of dwell time to 120 ms. 
 4. Press the "Import Data" button. 
 
 ### X-ray data visualization (Part 1)
 
-1. Quickly go through the maps and use the auto-contrast option <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the workspace "Options".
+1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the workspace "Options". <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> 
 2. Eliminate the maps which are not needed because they do not contain any important information (Ce, Cr, Ni, S). To eliminate a map, select the map in the primary tree menu, then right click on the name and select "Delete".
-3. Save your project using either the button "Save" <img src="/assets/022-save.png" alt="drawing" width="18"/> available in the workspace "PROJECT & IMPORT" or in the menu "File" > "Save Project".
+3. Save your project using either the button "Save" available in the workspace "PROJECT & IMPORT" or in the menu "File" > "Save Project". <img src="/assets/022-save.png" alt="drawing" width="18"/>
 
 ![Data visualization](/assets/LiveAbsoluteFrequencyPolygon.png)
 
