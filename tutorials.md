@@ -52,7 +52,7 @@ When the program is ready, a dialog box opens; pick the working directory __Tuto
 
 ### Import maps
 
-1. In the first workspace "PROJECT & IMPORT", click on the button "Import" <img src="/assets/323-add.png" alt="drawing" width="18"/> (Import Maps) to open the Import Tool module.
+1. In the first workspace "PROJECT & IMPORT", click on the button "Import" ![alt text](/assets/323-add.png) (Import Maps) to open the Import Tool module.
 2. Select all the map files to be imported and click on the button "Open". Note that you can select all the text files available in the folder and XMapTools will find out which ones can be imported as maps.
 3. In the tab "Corrections", change the value of dwell time to 120 ms. 
 4. Press the "Import Data" button. 
@@ -163,73 +163,73 @@ _Note: The video tutorial (see above) provides more tricks and explanations abou
      - Enter average density values for each phase. Note that average values are automatically proposed if the mineral name used is available in the XMapTools database. 
      - You can display the density map in that is listed under the category "Other" in the primary tree menu. 
 2. Display a merged map by selecting an oxide in the category "Merged" of the primary tree menu.
-3. Select “Rectangle ROI”, then press the button “Add ROI” <img src="/assets/093-binoculars.png" alt="drawing" width="18"/> and immediately click and drag over the map to create the ROI.
-4. For this exercise, reshape the ROI to about ¾ of the map surface. If the editing mode is disabled, press once the “Ctrl” key and try again editing the shape of the ROI.
+3. Select "Rectangle ROI", then press the button "Add ROI" <img src="/assets/093-binoculars.png" alt="drawing" width="18"/> and immediately click and drag over the map to create the ROI.
+4. For this exercise, reshape the ROI to about ¾ of the map surface. If the editing mode is disabled, press once the "Ctrl" key and try again editing the shape of the ROI.
 5. Save the local bulk composition.
-6. Set the number of simulations to 100 and the shift value expressed in number of pixels to 20 and press the button “Calculate the uncertainties using Monte Carlo” <img src="/assets/080-calculator.png" alt="drawing" width="18"/>. 
+6. Set the number of simulations to 100 and the shift value expressed in number of pixels to 20 and press the button "Calculate the uncertainties using Monte Carlo" <img src="/assets/080-calculator.png" alt="drawing" width="18"/>. 
 7. Save the results and the figure (File > Save As…).
 8. Change the ROI to cover the entire map and export the new bulk composition. Compare the composition with the one previously obtained for the smaller domain.
-9. Create a new merged map “garnet-excluded” containing only pixel compositions of biotite, plagioclase, quartz, sillimanite and sudoite and export the local bulk composition:
-     - Select the item “Biotite” in the category “Quanti” of the primary tree menu.
-     - Press the button “Merge” <img src="/assets/176-windows.png" alt="drawing" width="18"/>.
-     - Select all mineral except Garnet and press the button “Apply”.
-     - Rename the merged map into “Merged_noGrt”.
+9. Create a new merged map "garnet-excluded" containing only pixel compositions of biotite, plagioclase, quartz, sillimanite and sudoite and export the local bulk composition:
+     - Select the item "Biotite" in the category "Quanti" of the primary tree menu.
+     - Press the button "Merge" <img src="/assets/176-windows.png" alt="drawing" width="18"/>.
+     - Select all mineral except Garnet and press the button "Apply".
+     - Rename the merged map into "Merged_noGrt".
      - Export a local bulk composition of the entire area.
 
 The method to extract local bulk composition is described in Lanari, P., & Engi, M. (2017). Local bulk composition effects on metamorphic mineral assemblages, _Reviews in Mineralogy and Geochemistry_, __83__, 55-102 [<a href="https://pierrelanari.com/wp-content/uploads/2021/05/2017_LanariEngi_RiMG.pdf" target="_blank">Download</a>].
 
 ### Structural formulas, thermometry & generating images
 
-1. Set the active workspace to “FUNCTIONS”.
-2. In “Normalization & Structural Formula”, select “Function”, “Biotite” and “Bt (SF, 11-Ox. basis)”.
+1. Set the active workspace to "FUNCTIONS".
+2. In "Normalization & Structural Formula", select "Function", "Biotite" and "Bt (SF, 11-Ox. basis)".
 3. Display the function description by clicking on the button <img src="/assets/061-info_C.png" alt="drawing" width="18"/>.
-4. Select “Biotite” in the category “Quanti” of the primary tree menu 
-5. Press the “Apply” button <img src="/assets/311-app.png" alt="drawing" width="18"/> to calculate the maps of structural formula for biotite.
-6. Display the maps of structural formula “Biotite Bt (SF, 11-Ox. basis)” available in the category “Results” of the primary tree menu.
+4. Select "Biotite" in the category "Quanti" of the primary tree menu 
+5. Press the "Apply" button <img src="/assets/311-app.png" alt="drawing" width="18"/> to calculate the maps of structural formula for biotite.
+6. Display the maps of structural formula "Biotite Bt (SF, 11-Ox. basis)" available in the category "Results" of the primary tree menu.
 7. Generate an image showing the maps of Si, Ti and XMg in biotite:
      - In the menu, select in the menu: Image > Multi-Selection Mode.
      - Select the maps Si, Ti_M2 and XMg. Press ctrl (Windows) or Command (Mac) to select several maps in the primary tree menu. 
      - Once the maps are selected, select in the menu: Images > Add Multi-plot image.
-     - Unfold the new image available under the category “Images” in the primary tree menu. Select each map and use the auto-contrast option <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> or the live frequency polygon to adjust the lower and upper limits of the color bar. Note that the settings are saved when modifying an image.
+     - Unfold the new image available under the category "Images" in the primary tree menu. Select each map and use the auto-contrast option <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> or the live frequency polygon to adjust the lower and upper limits of the color bar. Note that the settings are saved when modifying an image.
      - To save the image, you can use the menu File > Save Image. Alternatively, you can copy the image into the clipboard and past it into your favorite vector graphics editor. In the menu, select: Edit > Copy Image.
      - Save your project; images and their settings are kept in the project file.
 8. Calculate the maps of structural formula for garnet (with and without Fe3+) and plagioclase.
 9. Calculate the maps of structural formula for garnet using a 8-cation basis.
 10. Generate a new image containing the XMg maps of biotite and garnet:
      - Activate the multi-selection mode (menu: Image > Multi-Selection Mode).
-     - In the menu “Image”, select the option “Add Multi-Layer Image (multi-scale)”.
+     - In the menu "Image", select the option "Add Multi-Layer Image (multi-scale)".
      - Adjust the color scale and the color palette of each map in the image object.
      - Display the multi-layer image.
-     - Select an other map (not an image) and change back the color palette to “XMap (CD)”. Note that this change does not affect the image.
+     - Select an other map (not an image) and change back the color palette to "XMap (CD)". Note that this change does not affect the image.
 11. Generate a new image containing maps of end-member fraction for almandine, pyrope, grossular and spessartine.
 12. Generate an image of Mg in biotite and in garnet (in apfu):
-     - Select any result in “Biotite Bt (SF, 11-Ox. basis)”.
+     - Select any result in "Biotite Bt (SF, 11-Ox. basis)".
      - In the menu, select: Modules > Generator.
-     - Type the following equation in the field that calculates Mg (apfu): “Mg = Mg_M1 + Mg_M2”.
-     - Press the button “Generate” <img src="/assets/044-repeat.png" alt="drawing" width="18"/>.
+     - Type the following equation in the field that calculates Mg (apfu): "Mg = Mg_M1 + Mg_M2".
+     - Press the button "Generate" <img src="/assets/044-repeat.png" alt="drawing" width="18"/>.
      - Activate the multi-selection mode.
      - Select the maps Mg in garnet and Mg in biotite; both are expressed in apfu.
-     - In the menu “Image”, select the option “Add Multi-Layer Image (shared-scale)”.
+     - In the menu "Image", select the option "Add Multi-Layer Image (shared-scale)".
      - Use the live frequency polygon to adjust the lower and upper limits of the color bar.
 13. Save the project.
 14. Calculate temperature maps using Ti-in-biotite thermometry:
-     - In the FUNCTIONS workspace, activate the “Map mode” in the section “Thermobarometry and other methods”, select “Biotite” and “T.Bt (all calibrations)”.
-     - Select “Biotite” in the category “Quanti”.
-    - Press the “Apply” button <img src="/assets/311-app.png" alt="drawing" width="18"/> available in the section “Thermobarometry and other methods”.
+     - In the FUNCTIONS workspace, activate the "Map mode" in the section "Thermobarometry and other methods", select "Biotite" and "T.Bt (all calibrations)".
+     - Select "Biotite" in the category "Quanti".
+    - Press the "Apply" button <img src="/assets/311-app.png" alt="drawing" width="18"/> available in the section "Thermobarometry and other methods".
     - Set the pressure to 6 kbar (0.6 GPa).
     - Display the map T_H05.
     - Save a single image containing the temperature map T_H05.
 15. Calculate temperature conditions using garnet-biotite thermometry:
-     - Select the merge map “Merged_RandomForest”.
+     - Select the merge map "Merged_RandomForest".
      - Adjust the view using zoom <img src="/assets/XXX_zoom_in.png" alt="drawing" width="18"/> and pan <img src="/assets/XXX_controller.png" alt="drawing" width="18"/> (optional).
-     - In the workspace “FUNCTIONS”, activate the “Multi-equilibrium” mode in the section “Thermobarometry and other methods”, select “Biotite” or “Garnet” and “T.Bt (all calibrations)”.
-     - Display the map FeOSelect “Circle ROI”, then press the button “Add ROI” <img src="/assets/093-binoculars.png" alt="drawing" width="18"/>.
+     - In the workspace "FUNCTIONS", activate the "Multi-equilibrium" mode in the section "Thermobarometry and other methods", select "Biotite" or "Garnet" and "T.Bt (all calibrations)".
+     - Display the map FeOSelect "Circle ROI", then press the button "Add ROI" <img src="/assets/093-binoculars.png" alt="drawing" width="18"/>.
      - Set the pressure to 6 kbar (0.6 GPa).
      - Select a ROI for garnet and then a ROI for biotite.
      - Results are displayed in a table for all calibrations. Check the help function <img src="/assets/061-info_C.png" alt="drawing" width="18"/> to obtain the references.
      - Save the results using the button <img src="/assets/022-save.png" alt="drawing" width="18"/> save available above the table.
      - Adjust the position of the ROI and extract the new temperature.
-     - Click on the “Reset ROI” button <img src="/assets/276-trash.png" alt="drawing" width="18"/>. 
+     - Click on the "Reset ROI" button <img src="/assets/276-trash.png" alt="drawing" width="18"/>. 
 
 
 ### Sampling tools and chemical diagrams
@@ -250,20 +250,20 @@ The method to extract local bulk composition is described in Lanari, P., & Engi,
      - Select any map of the structural formula of biotite.
      - In the menu select Modules > Data Vizualisation.
      - Display XMg vs TI_M2 and adjust the display by zooming on the figure.
-     - Select a ROI using the button “Polygon”  available in “Explore”How many groups of biotite can be identified?
+     - Select a ROI using the button "Polygon"  available in "Explore"How many groups of biotite can be identified?
      - Close the Data Vizualisation module to resume XMapTools.
 4. Generate a ternary plot for plagioclase:
      - Select any map of the structural formula of plagioclase.
      - In the menu select Modules > Data Vizualisation.
-     - Select “Ternary” plot and the following variables: Xab for X , Xsan for Y and Xan for Z.
-     - Use the “Polygon” tool  to identify pixels locations and to find mixing pixels.
+     - Select "Ternary" plot and the following variables: Xab for X , Xsan for Y and Xan for Z.
+     - Use the "Polygon" tool  to identify pixels locations and to find mixing pixels.
      - Close the Data Vizualisation module to resume XMapTools.
 5. Identify mixing pixels using intensity maps:
      - Select any intensity map in the primary tree menu.
      - In the menu select Modules > Data Vizualisation.
      - Display a binary diagram Al vs Mg.
-     - Use the “Polygon” tool  to identify the minerals and the mixing pixels between them
-     -Close the Data Vizualisation module to resume XMapTools.
+     - Use the "Polygon" tool  to identify the minerals and the mixing pixels between them
+     - Close the Data Vizualisation module to resume XMapTools.
 6. You can also generate the same plot using quantitative data (e.g. merged map) to notice the differences with intensity maps. It should be kept in mind that intensity maps are uncorrected for ZAF effects! 
 
 
