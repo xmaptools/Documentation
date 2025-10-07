@@ -45,7 +45,7 @@ Reference: Duesterhoeft, E. & Lanari, P. (2020). Iterative thermodynamic modelli
 
 ### How to get started?
 
-1. Download Tutorial_EPMA_2023.zip from the <a href="https://cloud.cpag-research.ch/index.php/s/HtL8eMuZFmgxluz" target="_blank">download center</a>.
+1. Download Tutorial_EPMA_2023.zip from the <a href="https://cloud.metp.ch/index.php/s/idQ2DtEcg7PPT94" target="_blank">download center</a>.
 2. Unzip the folder in a suitable working directory (e.g. Documents/Mapping/EPMA/__Tutorial_EPMA_2023/__)
 3. Open XMapTools. Note that starting XMapTools can take up to a minute; restarting the program is slightly faster
 When the program is ready, a dialog box opens; pick the working directory __Tutorial_EPMA_2023__ and click the button "Open". You can change the working directory later, but you need to pick a directory when you start the program. A log file is automatically created in the selected working directory.
@@ -59,9 +59,9 @@ When the program is ready, a dialog box opens; pick the working directory __Tuto
 
 ### X-ray data visualization (Part 1)
 
-1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> 
+1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> Auto-contrast button.
 2. Eliminate the maps which are not needed because they do not contain any important information (Ce, Cr, Ni, S). To eliminate a map, select the map in the primary tree menu, then right click on the name and select "Delete".
-3. Save your project using either the "Save" button available in the "PROJECT & IMPORT" workspace or in the menu "File" > "Save Project". <img src="/assets/022-save.png" alt="drawing" width="18"/>
+3. Save your project using either the "Save" button available in the "PROJECT & IMPORT" workspace or in the menu "File" > "Save Project". <img src="/assets/022-save.png" alt="drawing" width="18"/> Save button.
 
 ![Data visualization](/assets/LiveAbsoluteFrequencyPolygon.png)
 
