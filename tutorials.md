@@ -59,9 +59,9 @@ When the program is ready, a dialog box opens; pick the working directory __Tuto
 
 ### X-ray data visualization (Part 1)
 
-1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/> Auto-contrast button.
+1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="/assets/XXX_magic-wand.png" alt="drawing" width="18"/>
 2. Eliminate the maps which are not needed because they do not contain any important information (Ce, Cr, Ni, S). To eliminate a map, select the map in the primary tree menu, then right click on the name and select "Delete".
-3. Save your project using either the "Save" button available in the "PROJECT & IMPORT" workspace or in the menu "File" > "Save Project". <img src="/assets/022-save.png" alt="drawing" width="18"/> Save button.
+3. Save your project using either the "Save" button available in the "PROJECT & IMPORT" workspace or in the menu "File" > "Save Project". <img src="/assets/022-save.png" alt="drawing" width="18"/>
 
 ![Data visualization](/assets/LiveAbsoluteFrequencyPolygon.png)
 
