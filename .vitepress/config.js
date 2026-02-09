@@ -82,6 +82,7 @@ export default defineConfig({
         items: [
           { text: 'Tutorials', link: '/tutorials' },
           { text: 'Videos', link: '/videos' },
+          { text: 'Bingo-Antidote', link: '/bingo-antidote' },
         ]
       },
     ],
