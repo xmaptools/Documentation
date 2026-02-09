@@ -4,6 +4,8 @@
 
 - [File format](#file-format)
 - [Converter for LA-ICP-MS data](#converter-for-la-icp-ms-data)
+- [Log generator module](#log-generator-module)
+- [Calibration](#calibration)
 
 
 
