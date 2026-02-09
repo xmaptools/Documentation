@@ -2,14 +2,12 @@
 
 ## Table of contents
 
-
-__LA-ICP-MS__: 
-- [File format LA-ICP-MS](#file-format-la-icp-ms)
+- [File format](#file-format)
 - [Converter for LA-ICP-MS data](#converter-for-la-icp-ms-data)
 
 
 
-## File format LA-ICP-MS
+## File format
 
 The importer module should be able to read files in the following format. Note that some format require a conversion before to be imported in XMapTools. 
 
