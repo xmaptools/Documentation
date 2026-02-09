@@ -41,8 +41,8 @@ Contributions to improve or extend the documentation are welcome. Please follow 
 ├── index.md                  # Home page
 ├── getting-started.md        # Getting started guide
 ├── installation_guide.md     # Installation instructions
-├── documentation_epma.md     # EPMA documentation
-├── documentation_laicpms.md  # LA-ICP-MS documentation
+├── doc-epma.md               # EPMA documentation
+├── doc-laicpms.md            # LA-ICP-MS documentation
 ├── bingo-antidote.md         # Bingo-Antidote documentation
 ├── tutorials.md              # Tutorials
 ├── videos.md                 # Video resources
