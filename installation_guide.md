@@ -16,6 +16,9 @@ This guide covers how to install and update XMapTools 4.5 and future releases on
   - [Update Only (Windows)](#update-only-windows)
   - [Show Information (Windows)](#show-information-windows)
 - [Troubleshooting](#troubleshooting)
+  - [XMapTools suddenly not opening (Windows)](#xmaptools-suddenly-not-opening-windows)
+  - [Unfreeze XMapTools in case of error](#unfreeze-xmaptools-in-case-of-error)
+  - [Uninstalling XMapTools (Windows)](#uninstalling-xmaptools-windows)
 
 
 ## Prerequisites
@@ -235,6 +238,25 @@ Then re-run the installation or update command.
 ### Windows: permission denied
 
 Make sure you are running PowerShell **as Administrator**. Right-click the PowerShell icon and select *Run as Administrator*.
+
+### XMapTools suddenly not opening (Windows)
+
+If XMapTools was working previously and suddenly stops opening, this can be caused by a corrupted MATLAB Runtime installation or a Windows update that modified system paths. Try the following:
+
+1. Perform a full reinstallation using the `--install` flag
+2. If the issue persists, uninstall the MATLAB Runtime (see [Delete Old Runtime Libraries](#delete-old-runtime-libraries)) and reinstall
+
+### Unfreeze XMapTools in case of error
+
+If XMapTools becomes unresponsive during an operation, a dialog box may appear with **OK** and **Cancel** buttons. Click **Cancel** to cancel the current operation and unfreeze XMapTools. Clicking **OK** may restart the operation and keep XMapTools frozen.
+
+### Uninstalling XMapTools (Windows)
+
+To fully uninstall XMapTools on Windows:
+
+1. Open **Settings → Apps & Features** (or **Control Panel → Programs and Features**)
+2. Find **XMapTools** in the list and click **Uninstall**
+3. Optionally, uninstall the **MATLAB Runtime** from the same list if no other MATLAB-based applications require it
 
 ---
 
