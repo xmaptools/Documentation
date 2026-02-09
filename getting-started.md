@@ -18,7 +18,9 @@ Before installing, make sure your system meets the requirements below:
 
 > **Note:** The macOS version is **not** compatible with Intel processors, and the macOS Intel version is **not** stable with Apple Silicon processors. The installer auto-detects your architecture.
 
-## Installation
+## Next step
 
 Ready to install? Head over to the [Installation & Update Guide](/installation_guide) for step-by-step instructions.
+
+Is XMapTools already installed? If so, go straight [here](/getting-started-2.md).
 
