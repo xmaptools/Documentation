@@ -28,9 +28,10 @@ export default defineConfig({
       },
       { text: 'LA-ICP-MS', items: [
           { text: 'LA-ICP-MS', link: '/doc-laicpms' },
-          { text: 'File format LA-ICP-MS', link: '/doc-laicpms#file-format-la-icp-ms' },
+          { text: 'File format', link: '/doc-laicpms#file-format' },
           { text: 'Converter for LA-ICP-MS data', link: '/doc-laicpms#converter-for-la-icp-ms-data' },
           { text: 'Log generator module', link: '/doc-laicpms#log-generator-module' },
+          { text: 'Calibration', link: '/doc-laicpms#calibration' },
         ]
       },
       { text: 'External Functions', link: '/doc-ext-functions' },
@@ -62,8 +63,9 @@ export default defineConfig({
           },
           { text: 'LA-ICP-MS', link: '/doc-laicpms',
             items: [
-              { text: 'File formats', link: '/doc-laicpms#file-formats-and-data-types' },
-              { text: 'Converter module', link: '/doc-laicpms#converter-module' },
+              { text: 'File format', link: '/doc-laicpms#file-format' },
+              { text: 'Converter for LA-ICP-MS data', link: '/doc-laicpms#converter-for-la-icp-ms-data' },
+              { text: 'Log generator module', link: '/doc-laicpms#log-generator-module' },
               { text: 'Calibration', link: '/doc-laicpms#calibration' },
             ]
           },
