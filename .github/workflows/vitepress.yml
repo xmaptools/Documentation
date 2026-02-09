@@ -30,12 +30,6 @@ jobs:
         with:
           node-version: 20
 
-      # Copy images from assets to .vitepress/public
-      - name: Copy images into public
-        run: |
-          mkdir -p .vitepress/public
-          cp -R assets/* .vitepress/public/
-
       # Setup GitHub Pages
       - uses: actions/configure-pages@v4
 

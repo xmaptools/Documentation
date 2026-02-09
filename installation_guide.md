@@ -1,10 +1,6 @@
 # XMapTools Installation & Update Guide
 
-> **Script version:** 08.02.2026 — [https://xmaptools.ch](https://xmaptools.ch)
-
-This guide covers how to install and update XMapTools on **macOS** and **Windows** using the official bootstrap scripts. These scripts automate downloading, extracting, and configuring XMapTools and the required MATLAB Runtime.
-
----
+This guide covers how to install and update XMapTools 4.5 and future releases on **macOS** and **Windows** using the official bootstrap scripts. These scripts automate downloading, extracting, and configuring XMapTools and the required MATLAB Runtime.
 
 ## Table of Contents
 
@@ -21,7 +17,6 @@ This guide covers how to install and update XMapTools on **macOS** and **Windows
   - [Show Information (Windows)](#show-information-windows)
 - [Troubleshooting](#troubleshooting)
 
----
 
 ## Prerequisites
 
@@ -33,6 +28,10 @@ This guide covers how to install and update XMapTools on **macOS** and **Windows
 | **Shell** | Terminal (zsh or bash) | PowerShell |
 
 > **Note:** The MATLAB Runtime is installed automatically during a full installation. You do not need a MATLAB licence.
+
+> **Compatibility:** XMapTools 4.5 requires MATLAB Runtime 25.1. Older versions of the Runtime (e.g. v99, or v912) can be [deleted](#delete-old-runtime-libraries) after updating to XMapTools 4.5.
+
+> **Security:** The code executed by the install command is available at [https://xmaptools.ch/install.sh](https://xmaptools.ch/install.sh) (macOS) and [https://xmaptools.ch/install.ps1](https://xmaptools.ch/install.ps1) (Windows). Do not use any other domain name. The `xmaptools.ch` domain is official and the only domain used to distribute XMapTools. If you are behind a firewall that blocks access, ask your system administrator to allow HTTPS traffic to this domain.
 
 ---
 
@@ -64,11 +63,21 @@ curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --install Intel
 
 **What happens during installation:**
 
-1. Any previous XMapTools installation in `/Applications/XMapTools` is removed.
+1. Any previous XMapTools installation in `/Applications/XMapTools` is removed (you may be prompted for your administrator password).
 2. The installer archive is downloaded and extracted to a temporary directory.
 3. macOS Gatekeeper quarantine flags are cleared so the app can launch.
-4. The graphical installer opens — follow the on-screen instructions to complete the setup.
+4. The graphical installer opens — follow the steps below to complete the setup.
 5. A terminal command `xmaptools` is created so you can launch the app from any terminal window.
+
+**Graphical installer steps (macOS):**
+
+1. Enter your password to allow the MATLAB Runtime Installer to make changes.
+2. Press **Next**.
+3. Leave the default installation folder `/Applications/XMapTools` to allow automatic updates in the future and press **Next**.
+4. Leave the default installation folder for the Runtime `/Applications/MATLAB/MATLAB_Runtime` and press **Next**.
+5. Click **Begin Install** to install XMapTools and download the Runtime (~2 GB).
+6. Press **Close** when the installation is complete.
+7. You can now start XMapTools using `XMapTools.app`.
 
 ### Update Only (macOS)
 
@@ -238,3 +247,20 @@ Make sure you are running PowerShell **as Administrator**. Right-click the Power
 | **Info** | `curl -fsSL https://xmaptools.ch/install.sh \| bash -s -- --info` | `iex "& { $(irm https://xmaptools.ch/install.ps1) } --info"` |
 | **Install dir** | `/Applications/XMapTools` | `C:\Program Files\XMapTools` |
 | **Runtime dir** | `/Applications/MATLAB/MATLAB_Runtime` | `C:\Program Files\MATLAB\MATLAB Runtime` |
+
+---
+
+## Delete Old Runtime Libraries
+
+After upgrading to XMapTools 4.5, older MATLAB Runtime versions (v99, v912) are no longer needed and can be safely removed to free disk space.
+
+**macOS:**
+
+```bash
+sudo rm -rf /Applications/MATLAB/MATLAB_Runtime/v99
+sudo rm -rf /Applications/MATLAB/MATLAB_Runtime/v912
+```
+
+**Windows:**
+
+Use **Settings → Apps & Features** (or **Add or Remove Programs**) to uninstall the older MATLAB Runtime versions (R2020b / v912).

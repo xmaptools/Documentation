@@ -1,4 +1,4 @@
-# XMapTools documentation
+# XMapTools documentation for EPMA
 
 ## Table of content
 
@@ -6,21 +6,17 @@ __EPMA & SEM__:
 - [Data compatibility (EPMA)](#data-compatibility-for-epma)
   - [CAMECA](#cameca-microprobes)
     - [Maps](#cameca-maps)
-    - [Spot analyses](#cameca-spot-analyses)
+    - [Spot analyses](#spot-analyses)
 - [Data conversion](#data-conversion-for-epma)
-  - [EPMA converter module](#epma-converter-module)    
-- [Importing converted EPMA X-ray data](#importing-converted-epma-data)
-  - XXX
-  - [Mosaics](#generation-of-mosaics)
-    - [Grid mosaic](#grid-mosaic)
-    - [Real mosaic](#real-mosaic)
+  - [EPMA converter module](#epma-converter-module)
+- [Generation of mosaics](#generation-of-mosaics)
+  - [Grid mosaic](#grid-mosaic)
+  - [Real mosaic](#real-mosaic)
 - [Importing calibrated data (EPMA & SEM)](#importing-calibrated-data-from-epma-and-sem)
-
-
-__LA-ICP-MS__: 
-- [File format LA-ICP-MS](#file-format-la-icp-ms)
-- [Converter for LA-ICP-MS data](#converter-for-la-icp-ms-data)
-
+  - [Step 1: Adding calibrated maps](#step-1-adding-calibrated-maps)
+  - [Step 2: Data conversion (optional)](#step-2-data-conversion-optional)
+  - [Step 3: Classification of quantitative data](#step-3-classification-of-quantitative-data)
+  - [Step 4: Splitting a merged dataset](#step-4-splitting-a-merged-dataset-using-a-maskfile)
 
 
 ## Data compatibility for EPMA
@@ -251,16 +247,6 @@ DataSet/Point	Na	Mg	Al	Si	K 	Ca	Ti	Cr	Mn	Fe	O 	Total	Na	Mg	Al	Si	K 	Ca	Ti	Cr	Mn	
 
 
 
-
-
-
-
-
-
-
-
-
-
 ## Data conversion for EPMA
 
 The EPMA converter can be used to convert raw data for supported instruments to XMapTools format. 
@@ -283,6 +269,8 @@ Main steps:
 - Validate map selection.
 - Add standards data exported by the microprobe software as text or csv files. This step can be repeated until all standards data have been imported.
 - Generate Standards.txt containing the map coordinates and the spot analysis data to be used as internal standards for map calibration.
+
+For more detailed information on the EPMA Converter, refer to the <a href="https://htmlpreview.github.io/?https://github.com/xmaptools/XMapTools_Public/blob/main/Program/Dev/help/XMT_help_Converter_EPMA.html" target="_blank">embedded documentation</a> available within the program.
 
 #### Step 1: Select data format
 
@@ -310,18 +298,13 @@ After selecting all files for the spot analyses, press the button generate Stand
 
 
 
-
-## Importing converted EPMA data
-
-### Generation of mosaics
+## Generation of mosaics
 
 XMapTools can combine maps to create mosaics. There are two types of mosaic: _grid mosaic_, where the maps are stitched together in a grid, and _real mosaic_, where the maps are merged in the same coordinate system. 
 
-#### Grid mosaic
+### Grid mosaic
 
-The Generate Mosaic (Grid) button allows multiple maps to be stitched together in a grid. Such a mosaic allows maps of individual grains to be combined on a single image, improving the visualisation of possible variations in composition. The original coordinates of each map are not retained. Spot analyses used as internal standards must have X and Y manually defined after the mosaic has been created using the XMapTools coordinate system. For an alternative option, see the second mosaic option below.
-
-<img src="/assets/198-windows.png" alt="image" width="18"/> 
+The Generate Mosaic (Grid) <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/198-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button allows multiple maps to be stitched together in a grid. Such a mosaic allows maps of individual grains to be combined on a single image, improving the visualisation of possible variations in composition. The original coordinates of each map are not retained. Spot analyses used as internal standards must have X and Y manually defined after the mosaic has been created using the XMapTools coordinate system. For an alternative option, see the second mosaic option below.
 
 Procedure for creating a mosaic using a predefined grid:
 
@@ -335,15 +318,14 @@ Procedure for creating a mosaic using a predefined grid:
 - Set the number of columns in the dialogue box
 - XMapTools generates the mosaic and saves the new maps in a new selected directory and change the edit the current working directory automatically.
 
-<img src="/assets/Mosaic_grid.jpg" alt="image" width="300"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Mosaic_grid.jpg" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: This is an example of a mosaic grid for 13 maps, arranged in three columns (map: Pb in counts). This allows the maps to be merged and displayed with the same colour scale._  
 
-#### Real mosaic
+### Real mosaic
 
-The Generate Mosaic in Original Coordinate System button merges several maps into a referenced system based on their original coordinates. It also calculates the coordinates of the new map for the Standards.txt file. This means that spot analyses from the same microprobe session can be provided directly and used to calibrate the mosaic.
+The Generate Mosaic in Original Coordinate System <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/209-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button merges several maps into a referenced system based on their original coordinates. It also calculates the coordinates of the new map for the Standards.txt file. This means that spot analyses from the same microprobe session can be provided directly and used to calibrate the mosaic.
 
-<img src="/assets/209-windows.png" alt="image" width="300"/> 
 
 To create a referenced mosaic:
 
@@ -353,9 +335,42 @@ To create a referenced mosaic:
 - Press the Generate Mosaic in Original Coordinate System button
 - XMapTools generates the mosaic, saves the maps in the working directory, generates a file Standards.txt containing only the first block with the map coordinates. The order of the oxides (second block) and the analyses (third block) must be added manually.
 
-<img src="/assets/Mosaic_real.jpg" alt="image" width="18"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Mosaic_real.jpg" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: This is an example of a real mosaic for 3 maps, arranged using the map coordinates (map: Al2O3 in et%)._  
+
+
+## Importing data using the import module
+
+To import map data in XMapTools, select the 'Project and Import' tab and press the 'Import Maps' <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button located in 'Import Maps and Images'. This will open the import module and prompt you to select files. 
+
+Select the set of map files you want to import. Choose compatible files from the 'Pick Map File(s)' pop-up window. Note that multiple files can be selected at once. Any selected file that cannot be imported due to an incompatible format, for example, will be skipped during import.
+
+Format: Map files must have the *.txt, *.asc, *.dat or *.csv extension, no header and a name compatible with the XMapTools default element names for identification. The default lists of compatible element and oxide names are given in the source of the help file below.
+
+Selected map files are listed in the main table. More maps can be added by pressing the map selection button (see above)
+
+File: Contains the file names
+- Map Name: Contains the name of the corresponding element in the database
+- Type: Element or oxide
+- Data: Intensity or wt%
+- Special: EDS or WDS(?); in the case of WDS(?) a DTC is automatically selected
+- DTC: Dead time correction
+- OC: Orientation correction (legacy function from XMapTools 3, do not use; not tested)
+- Destination: Destination in XMapTools, can be: Intensity, Quanti, Merged, Other; drop down menu, can be edited.
+- Action: Keep or eliminate; drop down menu, editable.
+- Settings, such as setting the dwell time (as in XMapTools 3) can be changed in the Corrections section.
+
+Press the Import data button to import the selected maps into XMapTools after the corrections have been applied.
+
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 10px 0;">
+<strong>⚠️ Warning:</strong> In this version of XMapTools the file name should match exactly one of the compatible elements. Otherwise the map will be imported into the "Other" category. However, the filename can contain an element name followed by an underscore (_) and a comment, e.g. Si_sample1.txt will be recognised as a map of Si.
+</div>
+
+For more detailed information on the EPMA Converter, refer to the <a href="https://htmlpreview.github.io/?https://github.com/xmaptools/XMapTools_Public/blob/main/Program/Dev/help/XMT_help_ImportMaps.html" target="_blank">embedded documentation</a> available within the program.
+
+
+
 
 ## Importing calibrated data from EPMA and SEM
 
@@ -370,11 +385,11 @@ Quantitative maps can be imported in XMapTools via the _Import Tool_. Quantitati
 - For maps expressed in µg/g or wt% of oxides, the destination is automatically set to 'Merged'. No action is required, simply press the button Import Data.
 - Maps expressed in µg/g or wt% of elements, the destination must be changed manually to 'Merged' (see figure below). This operation needs to be repeated for each map. The click on the button Import Data.
 
-<img src="/assets/Import1.jpg" alt="image" width="300"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Import1.png" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: If maps are expressed in mass of elements, the destination should be changed from 'Intensity' to 'Merged'._  
 
-<img src="/assets/Import2.jpg" alt="image" width="300"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Import2.png" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: In this example the destination for each map has been set to 'Merged'._  
 
@@ -386,11 +401,11 @@ In the primary menu, select the dataset _Imported_Maps_ and then right-click on 
 
 Select the conversion method in the Converter tool and press the _Apply_ button.
 
-<img src="/assets/Convert1.jpg" alt="image" width="180"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Convert1.png" alt="image" style="max-width: 30%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: Select a dataset and then right-click to open the Converter from the primary menu._  
 
-<img src="/assets/Convert2.jpg" alt="image" width="300"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Convert2.png" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: Data conversion tool. In this example data are converted from element wt% to oxide wt%._  
 
@@ -398,17 +413,17 @@ _Figure: Data conversion tool. In this example data are converted from element w
 
 #### Step 3.1: Create a training set
 
-Display a map from the dataset using the Primary Menu and open the Classify tab. Select Training Set (Classification) in the Secondary Menu and press the _Add_ button in Classify and select the phases. Press again the _Add_ button to create a new mask definition in the training set. This operation can be repeated until the correct number of phases is reached. Each mask definition can be deleted by right-clicking on the name and selecting _Delete_.
+Display a map from the imported dataset using the Primary Menu and open the Classify tab. Select Training Set (Classification) in the Secondary Menu and press the _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button in Classify and select the phases. Press again the _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to create a new mask definition in the training set. This operation can be repeated until the correct number of phases is reached. Each mask definition can be deleted by right-clicking on the name and selecting _Delete_.
 
-You can rename each mask definition by double-clicking on his name in the Secondary Menu. Press _Add_ in Classify when a mask definition is selected to add a region-of-interest (ROI).
+You can rename each mask definition by double-clicking on his name in the Secondary Menu. Press _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> in Classify when a mask definition is selected to add a region-of-interest (ROI).
 
 #### Step 3.2: Add maps for classification
 
-Select the dataset in the category Merged of the Primary Menu and press the _Add Maps for Classification_ button to add all the maps of the dataset in the list that will be used by the classification function.
+Select the dataset in the category Merged of the Primary Menu and press the _Add Maps for Classification_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to add all the maps of the dataset in the list that will be used by the classification function.
 
 #### Step 3.3: Classification
 
-Select a dataset in the _Merged_ category of the Primary Menu and a _Training Set_ in the Secondary Menu. Pick an algorithm in the tab Classify and press the _Classify_ button. Note that the Classify button is only available when the appropriate dataset and training set are selected in the primary and secondary menus.
+Select a dataset in the _Merged_ category of the Primary Menu and a _Training Set_ in the Secondary Menu. Pick an algorithm in the tab Classify and press the _Classify_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/044-repeat.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button. Note that the Classify button is only available when an appropriate dataset and training set are selected in the primary and secondary menus.
 
 ### Step 4: Splitting a merged dataset using a maskfile
 
@@ -418,105 +433,13 @@ Select a mask file in the Secondary Menu. Select the dataset in _Merged_ and the
 
 The results are stored under the _Quanti_ category as individual dataset, one for each mask. These data sets can be used to calculate maps of structural formulas or other calculations.
 
-<img src="/assets/SelectionMenus1.jpg" alt="image" width="180"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/SelectionMenus1.png" alt="image" style="max-width: 30%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: Select a mask file, then click on the dataset of interest (here Imported_Maps_Oxides) and then right-click on the name for accessing the menu._  
 
-<img src="/assets/Result_Split1.jpg" alt="image" width="180"/> 
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Result_Split1.png" alt="image" style="max-width: 30%; height: auto; display: block; margin: 0 auto;"> 
 
 _Figure: Results are stored in the category Quanti_  
-
-
-
-
-
-
-
-
-## File format LA-ICP-MS
-
-The importer module should be able to read files in the following format. Note that some format require a conversion before to be imported in XMapTools. 
-
-### Agilent
-The date and time are read from the third row.
-```
-D:\Agilent\ICPMH\1\DATA\Name\map.b\map.d
-Intensity Vs Time,CPS
-Acquired      : 2022-01-24 11:11:45 AM using Batch map.b
-Time [Sec],Li7,Na23,Mg25
-0.6196,50.00,82227.81,0.00
-1.1516,50.00,79613.57,0.00
-[...]
-```
-
-### Thermo Fisher CSV
-The Date and time are read from the first row. 
-```
-Standards run :02-27-2024 11:16:40 AM;
-Software: [...]
-Configuration: [...]
-S-SQ-N%2FA: [...]
-RF Generator: [...]
-Ion Optics: [...]
-Vacuum: [...]
-Detector: [...]
-Cooling System: [...]
-Power Supply: [...]
-Gas Supply: [...]
-Pulse Counting: [...]
-
-Time,7Li,23Na,24Mg,25Mg, 
-,dwell time=0.01;xcal factor=59347.84333,dwell time=0.001;xcal factor=72480.60121,dwell time=0.01;xcal factor=73115.42471
-0.01326,400.006400102402,89317.9719802497,0
-0.41544,0,67180.0425139374,0 
-0.81759,0,76231.74450329,0
-[...]
-```
-
-### Thermo Fisher FIN2
-__Warning__: This file must be converted to CSV format using the 'Tools > Convert FIN2 to CSV' option in the converter.
-
-The Date and time are read from the first row. 
-```
-Finnigan MAT ELEMENT Raw Data
-Friday, July 04, 2025 11:31:12
-2025_07_04_Name1.FIN
-231
-0
-16,16,16
-CPS
-Time,Li7,B10,B11
-3.236000,340192.875000,585.555542,887.700012
-4.044000,342415.125000,459.555542,934.299988
-[...]
-```
-
-
-### Perkin Elmer
-The date and time are read from the file timestamp.
-```
-Intensity Vs Time, Counts per Second
-Time in Seconds ,Mg/25,Al/27,P/31,Ca/42
-
-0.,200.0016000128,1000.0400016001,3067.0428905946,31639.99295109
-0.28,200.0016000128,1600.102406554,3267.0935668927,30837.992406645
-[...]
-```
-
-
-## Converter for LA-ICP-MS data
-
-
-
-
-
-
-
-
-
-## Log generator module
-
-When the log generator module is used the time shift should be set to zero. 
 
 
 
