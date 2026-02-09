@@ -10,7 +10,7 @@
 
 ## What's Next?
 
-- Working with **EPMA** data? Try this [tutorial](/tutorials.html#tutorial-1-xmaptools-for-epma-2023).
+- Working with **EPMA** data? Try this [tutorial](/tutorials#tutorial-1-xmaptools-for-epma-2023).
 - Working with **LA-ICP-MS** data? Read this [paper](https://pierrelanari.com/wp-content/uploads/2024/01/2024_Markmann_ChemGeol.pdf).
 
 ---
@@ -29,4 +29,4 @@ All the MATLAB libraries need to be loaded, which takes some time. The second ti
 
 ## I am lost, where can I get some help?
 
-You can find articles on this website and help files in the program. We also have [tutorial videos](/tutorials.html). Do not hesitate to click on the help button available in each section to access a description of the main steps. If you feel that something is missing or unclear, or if you find an error, do not hesitate to contact us on [Discord](https://discord.com/invite/2ak9RXcJ5b) or via the [developer repository](https://github.com/xmaptools/XMapTools_Developers) on GitHub.
+You can find articles on this website and help files in the program. We also have [tutorial videos](/tutorials). Do not hesitate to click on the help button available in each section to access a description of the main steps. If you feel that something is missing or unclear, or if you find an error, do not hesitate to contact us on [Discord](https://discord.com/invite/2ak9RXcJ5b) or via the [developer repository](https://github.com/xmaptools/XMapTools_Developers) on GitHub.
