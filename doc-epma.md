@@ -1,6 +1,6 @@
 # XMapTools documentation for EPMA
 
-## Table of content
+## Table of contents
 
 __EPMA & SEM__:
 - [Data compatibility (EPMA)](#data-compatibility-for-epma)
@@ -280,7 +280,7 @@ Use the Select the _format dropdown menu_ to select data format. After selecting
 - JEOL (SUN) requires two files for each map: 'XX.cnd' and 'XX_map.txt', and two files for each set of spot analyses: 'summary.txt' and 'stage.txt'.
 - CAMECA requires one file for each map: 'XXXX.txt', and a single file for each set of spot analyses: 'YYY.csv'.
 
-#### Step 2: Set the destimation folder
+#### Step 2: Set the destination folder
 
 After selecting the data format, press the _Set a destination folder_ button and select an empty folder to save the data in the XMapTools format. This folder must be empty and existing data will be deleted!
 

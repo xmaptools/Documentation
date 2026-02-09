@@ -1,6 +1,6 @@
 # XMapTools documentation
 
-## Table of content
+## Table of contents
 
 
 __LA-ICP-MS__: 
