@@ -1,10 +1,10 @@
 {
   "name": "xmaptools-documentation",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "XMapTools Documentation built with VitePress",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev src",
+    "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
@@ -15,6 +15,6 @@
     "type": "git",
     "url": "https://github.com/xmaptools/Documentation.git"
   },
-  "author": "XMapTools Team",
-  "license": "MIT"
+  "author": "XMapTools",
+  "license": "GPL-3.0-or-later"
 }

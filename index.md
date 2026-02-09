@@ -8,11 +8,11 @@ hero:
   tagline: Free and versatile software solution for chemical maps analysis
   actions:
     - theme: brand
-      text: Getting Started
-      link: /getting-started
+      text: Installation
+      link: /installation_guide
     - theme: alt
-      text: Public repository
-      link: https://github.com/xmaptools/XMapTools_Public
+      text: Official website
+      link: https://xmaptools.ch
     - theme: alt
       text: Developer repository
       link: https://github.com/xmaptools/XMapTools_Developers
@@ -24,7 +24,7 @@ features:
   - icon: 📚
     title: Documentation
     details: Powerful tools for quantitative compositional mapping and analysis
-    link: /documentation
+    link: /getting-started
 
   - icon: 💻
     title: Tutorials
@@ -45,10 +45,11 @@ It provides numerical tools and packages implemented in a guided and versatile e
 
 For example, XMapTools includes a wide range of data processing options including routines for classification, segmentation, calibration and visualisation via single and multi-channel maps or via binary, ternary and spider diagrams.
 
-![XMapTools Logo](/assets/XMapTools_Transition.jpg)
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/XMapTools_Transition.jpg" alt="XMapTools Logo" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
 
+<br /><br />
 
-![XMapTools Logo](/assets/Logo_2025_square_512.png){width=150px}
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/Logo_2025_square_512.png" alt="XMapTools Logo" style="max-width: 10%; height: auto; display: block; margin: 0 auto;">
 
 
 
