@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "XMapTools Documentation",
+  title: "XMapTools 4.5 Documentation",
   description: "Free and versatile software solution for chemical maps analysis",
   base: "/Documentation/",
   
@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'Log generator module', link: '/doc-laicpms#log-generator-module' },
         ]
       },
+      { text: 'External Functions', link: '/doc-ext-functions' },
       { text: 'Tutorials', link: '/tutorials' },
       { text: 'Videos', link: '/videos' }
     ],
@@ -55,17 +56,32 @@ export default defineConfig({
               { text: 'Data conversion', link: '/doc-epma#data-conversion-for-epma' },
               { text: 'Generation of mosaics', link: '/doc-epma#generation-of-mosaics' },
               { text: 'Importing calibrated data', link: '/doc-epma#importing-calibrated-data-from-epma-and-sem' },
+              { text: 'Classification', link: '/doc-epma#classification' },
+              { text: 'Calibration (EPMA)', link: '/doc-epma#calibration-epma' },
             ]
           },
           { text: 'LA-ICP-MS', link: '/doc-laicpms',
             items: [
-              { text: 'File format', link: '/doc-laicpms#file-format' },
-              { text: 'Converter', link: '/doc-laicpms#converter-for-la-icp-ms-data' },
-              { text: 'Log generator module', link: '/doc-laicpms#log-generator-module' },
+              { text: 'File formats', link: '/doc-laicpms#file-formats-and-data-types' },
+              { text: 'Converter module', link: '/doc-laicpms#converter-module' },
+              { text: 'Calibration', link: '/doc-laicpms#calibration' },
+            ]
+          },
+          { text: 'External Functions', link: '/doc-ext-functions',
+            items: [
+              { text: 'Structural formulas', link: '/doc-ext-functions#structural-formulas' },
+              { text: 'Thermobarometry', link: '/doc-ext-functions#thermobarometry-and-other-methods' },
             ]
           },
         ]
-      }
+      },
+      {
+        text: 'Other resources',
+        items: [
+          { text: 'Tutorials', link: '/tutorials' },
+          { text: 'Videos', link: '/videos' },
+        ]
+      },
     ],
 
     socialLinks: [
@@ -74,7 +90,7 @@ export default defineConfig({
 
     footer: {
       message: 'XMapTools - Quantitative compositional mapping',
-      copyright: 'Copyright © 2025 XMapTools'
+      copyright: 'Copyright © 2025–2026 XMapTools'
     }
   }
 })

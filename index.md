@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: XMapTools 4.5
-  text: Quantitative compositional mapping
-  tagline: Free and versatile software solution for chemical maps analysis
+  text: Compositional mapping
+  tagline: Free and versatile software solution for quantitative chemical maps analysis.
   actions:
     - theme: brand
       text: Installation
@@ -17,7 +17,7 @@ hero:
       text: Developer repository
       link: https://github.com/xmaptools/XMapTools_Developers
   image:
-    src: /assets/Logo_2025_square_512.Xsq7Ybeo.png
+    src: /assets/Logo_2025_square_512.png
     alt: XMapTools
 
 features:
@@ -45,9 +45,11 @@ It provides numerical tools and packages implemented in a guided and versatile e
 
 For example, XMapTools includes a wide range of data processing options including routines for classification, segmentation, calibration and visualisation via single and multi-channel maps or via binary, ternary and spider diagrams.
 
+<br />
+
 <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/XMapTools_Transition.jpg" alt="XMapTools Logo" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
 
-<br /><br />
+<br />
 
 <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/Logo_2025_square_512.png" alt="XMapTools Logo" style="max-width: 10%; height: auto; display: block; margin: 0 auto;">
 

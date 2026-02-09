@@ -12,11 +12,22 @@ __EPMA & SEM__:
 - [Generation of mosaics](#generation-of-mosaics)
   - [Grid mosaic](#grid-mosaic)
   - [Real mosaic](#real-mosaic)
+- [Importing data](#importing-data-using-the-import-module)
 - [Importing calibrated data (EPMA & SEM)](#importing-calibrated-data-from-epma-and-sem)
   - [Step 1: Adding calibrated maps](#step-1-adding-calibrated-maps)
   - [Step 2: Data conversion (optional)](#step-2-data-conversion-optional)
   - [Step 3: Classification of quantitative data](#step-3-classification-of-quantitative-data)
   - [Step 4: Splitting a merged dataset](#step-4-splitting-a-merged-dataset-using-a-maskfile)
+- [Classification](#classification)
+  - [Classification parameters & algorithms](#classification-parameters-algorithms)
+  - [Training and classification](#training-and-classification)
+  - [Filtering options](#filtering-options)
+  - [Mask analysis & visualisation](#mask-analysis-visualisation)
+- [Calibration (EPMA)](#calibration-epma)
+  - [Standard data](#standard-data)
+  - [Map calibration](#map-calibration)
+  - [Calibration assistant (EPMA)](#calibration-assistant-epma)
+  - [Local bulk compositions](#local-bulk-compositions)
 
 
 ## Data compatibility for EPMA
@@ -324,7 +335,7 @@ _Figure: This is an example of a mosaic grid for 13 maps, arranged in three colu
 
 ### Real mosaic
 
-The Generate Mosaic in Original Coordinate System <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/209-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button merges several maps into a referenced system based on their original coordinates. It also calculates the coordinates of the new map for the Standards.txt file. This means that spot analyses from the same microprobe session can be provided directly and used to calibrate the mosaic.
+The Generate Mosaic in Original Coordinate System <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/209-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button merges several maps into a referenced system based on their original coordinates. It also calculates the coordinates of the new map for the Standards.txt file. This means that spot analyses from the same microprobe session can be provided directly and used to calibrate the mosaic.
 
 
 To create a referenced mosaic:
@@ -442,8 +453,254 @@ _Figure: Select a mask file, then click on the dataset of interest (here Importe
 _Figure: Results are stored in the category Quanti_  
 
 
+## Classification
+
+### Classification parameters & algorithms
+
+These tools are used to select an algorithm and maps to be used for classification.
+
+#### Chemical system: how to add/remove maps?
+
+The goal is to set the map input of the classification function. It is not required to use all available maps for classification; maps containing only noise are usually excluded.
+
+The list of maps used by the classification function is displayed in the text field. The button _Add Maps for Classification_ adds all maps available in the intensity tab of the primary menu. The button _Edit Selected Map_ can have two modes: add (plus icon) or eliminate (minus icon) depending on whether the map selected in the primary menu is already available in the list or not. Clicking "plus" adds the selected map, whereas clicking "minus" eliminates the selected map from the list.
+
+#### Algorithm selection
+
+The machine learning algorithm used for classification can be selected via the algorithm menu available in the section _Classification Parameters_.
+
+The following algorithms are available:
+
+- **Random Forest**: An ensemble learning method for classification constructing a multitude of decision trees during training. The output of the random forest is the class selected by most trees (majority vote).
+- **Discriminant Analysis**: Classification method that assumes that different classes generate data based on different Gaussian distributions. To train a classifier, it estimates the parameters of a Gaussian distribution for each class.
+- **Naive Bayes**: Classification algorithm applying density estimation to the data and generating a probability model. The decision rule is based on the Bayes theorem.
+- **Support Vector Machine**: Data points (p-dimensional vector) are separated into n classes by separating them with a (p-1)-dimensional hyperplane. The algorithm chooses the hyperplane so that the distance from it to the nearest data point on each side is maximised.
+- **Classification Tree**: A decision tree is used as predictive model to classify the input features into classes via a series of decision nodes. Each leaf of the tree is labelled with a class.
+- **k-Nearest Neighbour**: An object is classified by a plurality vote of its neighbours, with the object being assigned to the class most common among its k nearest neighbours.
+- **k-Means**: Classification method that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest cluster centroid, serving as a prototype of the cluster.
+
+#### Principal component analysis (PCA) — Optional
+
+The principal components of a collection of points in a real coordinate space are a sequence of vectors consisting of best-fitting lines, each of them defined as one that minimizes the average squared distance from the points to the line. These directions constitute an orthonormal basis in which different individual dimensions of the data are linearly uncorrelated. The first principal component can equivalently be defined as a direction that maximizes the variance of the projected data. Principal component analysis (PCA) is the process of computing the principal components and using them to perform a change of basis on the data.
+
+The button _Generate Maps of the Principal Components (PCA)_ generates a map for each principal component and stores them in the section Other of the primary menu.
+
+If the tick-box _incl. PCA_ is selected, the maps of principal components are included as additional dimensions for the classification. Example: if 8 intensity maps are considered, a total of 14 maps of PC are added to the classification input, 7 for a normal PCA and 7 for a normalised PCA.
+
+### Training and classification
+
+A training set must be selected in the secondary menu in order to activate the classification button.
+
+The button _Classify_ (Train a Classifier & Classify) trains a new classifier and performs the classification using the algorithm selected in the menu and the specified set of maps.
+
+Once the classification is achieved, a new mask file is generated and stored under _Mask files_ in the secondary menu. The mask file is automatically selected and the mask image displayed in the main figure.
+
+### Filtering options
+
+The following options apply to a given mask file. Select a mask file in the secondary menu to apply changes.
+
+Select the option to hide pixels having a class probability lower than a given threshold for the selected mask file. Set the probability threshold used for hiding pixels. This value should range between 0 and 1.
+
+The button _Create new mask file with pixels filtered by probability_ generates a new mask file after filtering. This option replaces the BCR correction available in XMapTools 3 and is more adequate as only the misclassified pixels are excluded.
+
+### Mask analysis & visualisation
+
+The modes of each class within a given region-of-interest can be exported using the tools provided in this section. Modes are given as surface percentage calculated using the number of pixels of each class. For minerals, this can be eventually extrapolated to volume fraction as discussed in Lanari & Engi (2017).
+
+Select the ROI shape to be used to extract the local modes from the dropdown menu.
+
+The button _Add ROI_ allows a new region-of-interest (ROI) to be drawn on the figure. Note that a mask file must be selected before activating this mode. Results are displayed in the right window as a table containing the modes and number of pixels for each class and as a pie diagram.
+
+The following ROI shapes are available:
+
+- **Rectangle**: click to select the first corner and drag the mouse to the opposite corner defining a rectangle
+- **Polygon**: click successively on the image to draw a polygon; right-clicking validates and closes automatically the shape
+
+The button _Plot Compositions_ generates a plot using the data selected in the primary menu (either intensity, or a merged map) and the mask file selected in the secondary menu.
 
 
+## Calibration (EPMA)
+
+The following steps are required to convert raw data (e.g. X-ray maps) into maps of chemical composition:
+
+- Import standard data as spot analyses for the calibration of EPMA data
+- Check/adjust/add standard data
+- Calibrate using the Calibration Assistant for EPMA data
+
+### Standard data
+
+The spot analyses used as internal standards in the calibration of EPMA data are referred to as "standards" in the following as they permit to define a calibration curve that correlates X-ray intensities to composition (e.g. expressed in oxide/element wt%).
+
+It is necessary to import the standards from a standard file, check their positions and eventually correct, check the chemical compositions and eventually create new standards. All these steps can be achieved in XMapTools 4.
+
+#### File Standards.txt
+
+The file Standards.txt contains (i) the map coordinates and (ii) the spot analyses used for the standardisation. The map coordinates must be listed within a single row below the keyword `>1`. The oxide order is set below the keyword `>2`. X and Y must be the two last labels and must be listed in this specific order. The internal standards analyses are listed below the keyword `>3` corresponding to the oxide order defined above (keyword `>2`).
+
+```
+>1 Here paste the image coordinates (Xmin Xmax Ymax Ymin)
+56.739 57.239 43.691 43.371
+
+>2 Here define the oxides order
+SiO2 MgO FeO Al2O3 X Y
+
+>3 Here paste the analyses 
+25.4800 11.260 29.050 21.1400 1.4800 68.310 39.999
+52.9400 3.5300 3.0200 24.2300 0.0197 68.310 39.535
+52.5800 3.6300 2.7900 24.7200 0.0195 68.331 39.511
+```
+
+#### Import standards
+
+The button _Import_ (Import spots for Standards (from file)) is used to import standards from a file.
+
+The box _Import from Standards.txt_ is selected by default allowing the file 'Standards.txt' to be read automatically. If the file containing the standard data has a different name, unselect the box and it will be possible to select a file in the Pick a file pop-up window. At the moment all standards need to be stored within a single file. It is not possible to import standards from different files as existing standards will be eliminated when a new file is loaded.
+
+Once loaded, standards are displayed on the main map with a label including the spot number and several plots are produced and shown in the category "Standards" of the live display module. You can get this global visualisation at any stage by selecting _Standards (Spots)_ in the Secondary Menu. Three plots are produced if an element is selected in the primary menu, from top to bottom: (1) a plot showing intensity/composition versus sequence of standard to visualise if there is a good match between the standard compositions and the intensity values of the matching pixels; (2 and 3) two correlation maps, one for the selected element in the primary menu and a second one considering all elements.
+
+#### Adjusting standard positions
+
+To adjust the positions, display the map of a diagnostic element (Intensity) and select _Standards (Spots)_ in the secondary menu. The two correlation maps should show a maximum value in yellow and the blue spot representing the current position should be centred on this optimum.
+
+To adjust the position of the standards (all at once), put the mouse cursor over the blue circle showing up a transparent circle. Click on it and move the blue circle to the new position. The values in the two white fields on top will be adjusted. Then click on the button _Refresh_ (important) to update the standard positions. The _Refresh_ button is only available when standard positions have been changed and need to be saved.
+
+Note: If no good correlation exists for a given element, the higher value of the second figure could not represent the optimal position.
+
+#### Adding new standard point(s)
+
+It is possible to add new standard points directly in XMapTools. Note that these will not be saved to the file Standards.txt, and if the file is loaded again all changes will be lost.
+
+The button _Add standard point_ adds a new standard at selected coordinates, set by clicking on the map after pressing the button. Compositional data can be filled directly in the table, when this standard is selected.
+
+Procedure:
+
+- Select an element map (e.g. SiO₂ for adding a spot of quartz) and select the item _Standards (Spots)_ in the secondary menu
+- Press the button _Add Standard Point_
+- Click on the map at the position to add the new standard point
+- (Optional) It is possible to adjust the position of any manual standard by moving the blue spot (transparent circle) or its label (cross-shaped cursor)
+- The new standard point is automatically selected in the Secondary Menu and the composition table shown on the right side
+- You can enter manually the oxide (wt%) composition of the new standard in the column 'wt%' in blue. The X-ray intensity of the corresponding pixel is already available in the 'Int' column
+- There is nothing more to do — all data are automatically saved
+- (Optional) You can rename any standard by double clicking on its name in the secondary menu
+
+### Map calibration
+
+A calibration step, also known as standardisation, is required to convert intensity maps into compositional maps (Lanari et al. 2019).
+
+All minerals/objects are calibrated at the same time in XMapTools 4. Therefore it is required to select a _Mask File_ in the Secondary Menu to activate the button _Calibrate_.
+
+The approach implemented in XMapTools 4 provides a module for auto multi-phase calibration. The button _Calibrate_ opens the Calibration Assistant for EPMA Data. This button is only available when a mask file is selected in the Secondary Menu.
+
+For more detailed information on the Calibration Assistant, refer to the embedded documentation accessible from the assistant.
+
+### Calibration assistant (EPMA)
+
+The new approach implemented in XMapTools 4 provides a module for auto multi-phase calibration.
+
+#### Strategy: advantages and pitfalls
+
+An auto calibration is performed considering all spot analyses and all masks when you press the button _Calibrate_. The new algorithm performs first a general fit including all standards and then adjusts the calibration for each mineral. All calibration curves, including those for the general fit are accessible via the tree menu.
+
+If you press the button _Apply Standardization_, all calibrated maps, for each mineral as well as a merged map are created and sent back to XMapTools. It seems magic, but it is not, so first make sure that you check the quality of the calibration curves determined by the auto function.
+
+The auto function works if all minerals have been measured with at least a few spot analyses and if there is at least one mineral with a composition above 1 wt% for each element. If a mineral or other feature (e.g. fracture) has no spot analyses, the program extrapolates a calibration from the general fit, therefore "predicting" a composition. At this stage, this composition is likely to be wrong because matrix effects are ignored!
+
+If you close the Calibration Assistant window, neither calibrated data nor calibration settings are saved. If you press _Apply Standardisation_, all maps are sent to XMapTools.
+
+#### Displaying calibration curves
+
+Use the tree menu located on the left side to navigate through the list of minerals and elements and to display calibration curves.
+
+If you select a mineral in the tree menu, a single map showing the sum of elements/oxides (total wt%) is displayed. The plot in the central part shows all calibration curves, for all the elements of the selected mineral. Some data are shown in a table:
+
+- **El.**: shows the element name (of the map), the total of the median mineral composition considering all pixels (sum(wt%)) and the total of the peak position (Peak(SumOx))
+- **#(std)**: shows the number of internal standards used for calibrating this phase
+- **med(it)**: shows the median intensity value of the selected mineral for each element
+- **med(wt)_s**: shows the median standard composition (spot analyses)
+- **peak(wt)_m**: shows the median composition of the calibrated map
+- **k-factor**: quantifies the difference between the calibration obtained during the general fit and the final calibration of the selected mineral. A value of 1 means that both are identical
+- **Slope**: of the calibration curve of each element
+- **Background**: value for each element
+
+To display a specific calibration curve (for a given element), unfold the menu by clicking on the small arrow on the left side of the mineral name and select an element. The corresponding calibration curve is displayed as well as the correspondent quantitative map (oxide wt%).
+
+#### Adjusting a calibration curve
+
+When an element is selected the button _Adjust_ appears above the tree menu. Clicking on this button displays two fields containing the values for background and slope. Values can be changed manually by typing new values in the corresponding field. Press enter to calculate and display the new calibration curve on the plot (this operation can take a few seconds).
+
+#### Displaying results of the general fit
+
+By selecting the _General fit_ (last option in the tree menu), a plot with the calibration curves for all the elements is displayed. No adjustment on the calibration curves in the general fit is possible. This fit is automatically performed first by the program and no longer used once the calibration of each mineral is achieved.
+
+#### Apply calibration
+
+After checking each calibration curve and adjusting if necessary, use the button _Apply standardization_ to generate the calibrated maps.
+
+By applying the standardisation, the option _Quanti_ in the Primary Menu becomes available. There, the quantitative maps in element/oxide wt% of each phase can be displayed.
+
+The option _Merged_ in the Primary Menu also becomes available after the standardisation. A set of merged maps (i.e., quantitative maps in oxide wt% for all the phases considered together) is automatically generated.
+
+#### Notes
+
+Red spots show outliers that are not considered in the calculation of the calibration curves.
+
+By hovering the cursor on the images, an image menu will appear on the upper right. This menu includes options to zoom, save and copy the images.
+
+### Local bulk compositions
+
+A local bulk composition (abbreviation: LBC) represents the bulk composition of a spatial domain in a rock determined by integrating pixel compositions. As discussed in Lanari and Engi (2017), it is necessary to apply a density correction prior to exporting any local bulk composition.
+
+To export local bulk compositions the following steps should be employed:
+
+- Generate a density map
+- Generate a merged map (if not available yet)
+- Select an area of interest to extract the local bulk composition
+
+#### Generate a density map
+
+A density map is a map containing density data for each pixel of a map. It is calculated for a given mask file. Select a mask file in the secondary menu.
+
+The button _Generate Density Map_ (from a mask file) allows a density map to be generated from the selected mask file. A mask file should be selected to activate the button. Pressing this button opens a window with predefined average density values (provided that the mineral name was recognised and a reference value available in the internal database; when full names of minerals in English are used, the mineral should be recognised).
+
+Note: mineral density values can be obtained from the website [webmineral.com](http://www.webmineral.com/).
+
+A density map will be created and stored under the category _Other_ in the Primary Menu with the name 'Density [maskfile_name]'.
+
+#### Generate a merged map
+
+Merged maps are maps for which all pixels hold a chemical composition. A merged map is automatically created by the standardisation function in XMapTools 4. If you need to create a merged map manually, follow the procedure below.
+
+In the primary menu, unfold _Quanti_ and select a quanti map (mineral). The button _Merge_ (Merge Quanti Data) in the section Calibrate becomes available. In the window that pops up, select the quanti maps to be merged. Select 'Ok' to generate the merged maps that will be stored in the category _Merged_.
+
+#### Select ROI and calculate LBC
+
+A local bulk composition can be calculated from a region-of-interest (ROI). The ROI can be a rectangle or a polygon. The density correction is automatically applied.
+
+Select a merged map in the primary menu and display an element. In the dropdown menu, select the wanted ROI shape: _Rectangle ROI_ or _Polygon ROI_.
+
+The button _Add a ROI for LBC extraction_ allows a region-of-interest (ROI) to be drawn on the figure. If _Rectangle ROI_ is selected, click on a corner, hold and drag to draw a rectangle. If _Polygon ROI_ is selected, click on the image to draw the polygon and close by selecting the first point or right-clicking.
+
+When a ROI is available, the table containing the local bulk composition appears in the live display module. The first column shows the element list, whereas compositions are listed in the column composition (unit: wt%). Below the table, a pie chart shows the repartition of the elements/oxides by weight.
+
+The ROI can be edited and the composition values in the table and the pie chart are automatically updated.
+
+The density map used is shown in a dropdown menu located in the live display module.
+
+The button _Copy Data to clipboard_ may be used to copy the LBC data from the table. The button _Save_ may be used to save the LBC data as a .txt file.
+
+#### Approximation of uncertainties for LBC
+
+An uncertainty approximation similar to what is described in Lanari and Engi (2017) is available.
+
+Select a merged map and create a Rectangle ROI. Define the number of simulations _Sim_ (default 100) and the shift _Px_ in pixel (default 20). The shape will be randomly displaced and resized using two random variables calculated from the shift value (assuming a Gaussian distribution and the value of Px as 1 sigma expressed in number of pixels). Click on the button _Calculate uncertainties using Monte-Carlo_.
+
+The areas used to approximate an uncertainty are plotted in a new figure and the result is shown in the table of the live display module. The column _composition_ shows the original local bulk composition (selected ROI). The column _2std_ shows the 2 standard deviation value (note that the distributions are usually Gaussian as shown by Lanari & Engi (2017)). The last column shows the mean value of all compositions. This value should match the composition of the original ROI. If not, this means that a Gaussian distribution cannot be assumed for this element and the uncertainty is not correct.
+
+### References
+
+- De Andrade, V., Vidal, O., Lewin, E., O'Brien, P., Agard, P. (2006). Quantification of electron microprobe compositional maps of rock thin sections: an optimized method and examples. Journal of Metamorphic Geology, 24, 655–668.
+- Lanari, P., & Engi, M. (2017). Local bulk composition effects on metamorphic mineral assemblages, Reviews in Mineralogy and Geochemistry, 83, 55–102.
+- Lanari, P., Vho, A., Bovay, T., Airaghi, L., Centrella, S. (2019). Quantitative compositional mapping of mineral phases by electron probe micro-analyser. Geological Society of London, Special Publications, 478, 39–63.
 
 
 
