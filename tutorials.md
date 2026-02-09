@@ -59,7 +59,7 @@ When the program is ready, a dialog box opens; pick the working directory __Tuto
 
 ### X-ray data visualization (Part 1)
 
-1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure bellow) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/XXX_magic-wand.png" alt="drawing" width="18">
+1. Quickly go through the maps and use the auto-contrast option or the live frequency polygon (see figure below) to adjust the lower and upper limits of the color bar. Note that the color bar settings are available in the "Options" workspace. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/XXX_magic-wand.png" alt="drawing" width="18">
 2. Eliminate the maps which are not needed because they do not contain any important information (Ce, Cr, Ni, S). To eliminate a map, select the map in the primary tree menu, then right click on the name and select "Delete".
 3. Save your project using either the "Save" button available in the "PROJECT & IMPORT" workspace or in the menu "File" > "Save Project". <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/022-save.png" alt="drawing" width="18">
 
@@ -112,13 +112,13 @@ Additional information about the classification in XMapTools can be found in : L
 5. Save the modes using the button save in the composition tab on the right. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/022-save.png" alt="drawing" width="18">  
 6. Note that you can also copy the data to the clipboard using the button copy. Paste the data in a spreadsheet software program. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/093-binoculars.png" alt="drawing" width="18">
 7. Eliminate the ROI using the function "Reset ROI". <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/276-trash.png" alt="drawing" width="18">
-8. For comparaison purposes (don't use that method for publications!), calculate pseudo modes using the point counting method:
+8. For comparison purposes (don't use that method for publications!), calculate pseudo modes using the point counting method:
      - Set the number of points to 500.
      - Unselect the Monte-Carlo option.
      - Extract several successive sets of pseudo modes using the point counting method by clicking on the "Generate pseudo-modes" button and copy the results in a spreadsheet software program. _Note: now you know why this method should not be used._ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/090-share.png" alt="drawing" width="18"> 
 9. Calculate pseudo modes using the point counting method and Monte Carlo to calculate uncertainties on the results (_note: what is never done with point counting_):
      - Set the number of points to 300.
-     - Select the Monte-Carlo optionExtract pseudo modes and uncertainties using the "Generate pseudo-modes" button and copy the results in a spreadsheet software program. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/090-share.png" alt="drawing" width="18">
+     - Select the Monte-Carlo option. Extract pseudo modes and uncertainties using the "Generate pseudo-modes" button and copy the results in a spreadsheet software program. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/090-share.png" alt="drawing" width="18">
      - You can repeat this calculation for several number of points (e.g. 500, 750, 1000) and copy the results in a spreadsheet software program.
 
 ### Analytical standardisation
@@ -147,7 +147,7 @@ The calibration method used by XMapTools is described in Lanari, P., Vho, A., Bo
      - Select a mask file in the secondary tree menu.
      - In the "CALIBRATE" workspace, press the button "Calibrate" to open the Calibration assistant for EPMA data. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/010-record.png" alt="drawing" width="18"> 
      - Check the calibration curves by displaying the curve for each element of each mineral.
-     - Use the button "Adjust (Manual)" to modify the calibration curve in case the calibration algorithm failed to set a proper calibration curveSelect the option "Apply to all masks".
+     - Use the button "Adjust (Manual)" to modify the calibration curve in case the calibration algorithm failed to set a proper calibration curve. Select the option "Apply to all masks".
      - Press the button "Apply Standardization"  to calibrate all maps and send the data to XMapTools.
 8. Check the calibrated maps and the merged map using the primary tree menu.
 9. If the calibration quality is not good, select the category "Quanti" in the primary tree menu, then right-click on the name and select "Clear All" (optional). This will eliminate all the data in this category. You can do the same for the category "Merged".
@@ -215,15 +215,15 @@ The method to extract local bulk composition is described in Lanari, P., & Engi,
 14. Calculate temperature maps using Ti-in-biotite thermometry:
      - In the FUNCTIONS workspace, activate the "Map mode" in the section "Thermobarometry and other methods", select "Biotite" and "T.Bt (all calibrations)".
      - Select "Biotite" in the category "Quanti".
-    - Press the "Apply" button available in the section "Thermobarometry and other methods". <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/311-app.png" alt="drawing" width="18"> 
-    - Set the pressure to 6 kbar (0.6 GPa).
-    - Display the map T_H05.
-    - Save a single image containing the temperature map T_H05.
+     - Press the "Apply" button available in the section "Thermobarometry and other methods". <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/311-app.png" alt="drawing" width="18"> 
+     - Set the pressure to 6 kbar (0.6 GPa).
+     - Display the map T_H05.
+     - Save a single image containing the temperature map T_H05.
 15. Calculate temperature conditions using garnet-biotite thermometry:
      - Select the merge map "Merged_RandomForest".
      - Adjust the view using zoom and pan (optional).
      - In the workspace "FUNCTIONS", activate the "Multi-equilibrium" mode in the section "Thermobarometry and other methods", select "Biotite" or "Garnet" and "T.Bt (all calibrations)".
-     - Display the map FeOSelect "Circle ROI", then press the "Add ROI" button. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/093-binoculars.png" alt="drawing" width="18">
+     - Display the map FeO. Select "Circle ROI", then press the "Add ROI" button. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/093-binoculars.png" alt="drawing" width="18">
      - Set the pressure to 6 kbar (0.6 GPa).
      - Select a ROI for garnet and then a ROI for biotite.
      - Results are displayed in a table for all calibrations. Check the help function to obtain the references. <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/061-info_C.png" alt="drawing" width="18">

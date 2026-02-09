@@ -1,6 +1,7 @@
 # VitePress
 src/.vitepress/dist/
 src/.vitepress/cache/
+.vitepress/cache/
 
 # Node.js
 node_modules/

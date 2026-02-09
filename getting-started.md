@@ -22,5 +22,5 @@ Before installing, make sure your system meets the requirements below:
 
 Ready to install? Head over to the [Installation & Update Guide](/installation_guide) for step-by-step instructions.
 
-Is XMapTools already installed? If so, go straight [here](/getting-started-2.md).
+Is XMapTools already installed? If so, go straight [here](/getting-started-2).
 
