@@ -45,13 +45,10 @@ It provides numerical tools and packages implemented in a guided and versatile e
 
 For example, XMapTools includes a wide range of data processing options including routines for classification, segmentation, calibration and visualisation via single and multi-channel maps or via binary, ternary and spider diagrams.
 
-<br />
+<br /><br />
 
-<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/XMapTools_Transition.jpg" alt="XMapTools Logo" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/XMapTools_Transition.jpg" alt="XMapTools Logo" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 
-<br />
-
-<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Logo/Logo_2025_square_512.png" alt="XMapTools Logo" style="max-width: 10%; height: auto; display: block; margin: 0 auto;">
 
 
 
