@@ -54,7 +54,10 @@ curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --install
 
 The script automatically detects whether your Mac uses Apple Silicon or Intel and downloads the correct version.
 
+<!-- 
 **Specify architecture manually:**
+
+If auto-detection fails or you need to force a specific architecture, you can manually specify which version to install. This is useful if you have multiple architectures available or want to override the detected architecture.
 
 ```bash
 # Apple Silicon (M1, M2, M3, M4, …)
@@ -63,6 +66,7 @@ curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --install AppleSilicon
 # Intel
 curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --install Intel
 ```
+-->
 
 **What happens during installation:**
 
@@ -94,6 +98,7 @@ An update replaces the XMapTools application bundle **without reinstalling** the
 curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --update
 ```
 
+<!-- 
 **Specify architecture manually:**
 
 ```bash
@@ -103,6 +108,7 @@ curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --update AppleSilicon
 # Intel
 curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --update Intel
 ```
+-->
 
 **What happens during an update:**
 
