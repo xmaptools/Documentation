@@ -177,39 +177,61 @@ For more detailed information on the Calibration Assistant, refer to the embedde
 
 ### Calibration assistant (LA-ICPMS)
 
-The approach implemented in XMapTools 4 provides a module for mineral calibration based on the reference composition of an element (internal standard). Unlike other programs, the composition of the reference element can be variable in the mineral.
+The approach implemented in XMapTools 4, described in Markmann et al. (2024), provides a mineral calibration module based on the reference composition of an element (internal standard). In contrast to other programs, the composition of the reference element in the mineral can be **variable**.
+
+> Markmann, T.A., Lanari, P., Piccoli, F., Pettke, T., Tamblyn, R., Tedeschi, M., Lueder, M., Kunz, B., Riel, N., and Laughton, J. (2024). Multi-phase quantitative compositional mapping by LA-ICP-MS: analytical approach and data reduction protocol implemented in XMapTools. *Chemical Geology*, **646**, 121895.
 
 #### Step-by-step guide
 
-- Select the mineral to be calibrated using the dropdown menu _Mineral_
-- Select the element to be used as internal standard using the dropdown menu _Internal Standard_
-- Decide if you want to use a fixed or variable composition using one of the option _Fixed composition_ or _Variable composition_ (see below)
+1. Select the mineral to be calibrated using the drop-down menu *Mineral*
+2. Select the element to be used as the internal standard from the drop-down menu *Internal Standard*
+3. Decide whether you want to use a fixed or variable composition using one of the options *Fixed composition* or *Variable composition* (see below)
 
 #### Case 1: Fixed composition
 
-This mode is valid if an element is chemically unzoned in the selected mineral and you want to use it as internal standard (e.g. SiO₂ in garnet).
+This mode is useful when an element is chemically unzoned in the selected mineral and you want to use it as an internal standard (e.g. SiO₂ in garnet).
 
-You can use the _Internal Composition Converter_ tool to convert the composition of the internal standard in µg/g of element. Enter a value in oxide wt% and the converter will automatically translate this value to µg/g. Note that the value in the field for _Fixed composition_ changes when a new conversion is performed; there is no need to copy the value from one field to the other.
+You can use the **Internal Composition Converter** tool to convert the composition of the internal standard into µg/g of element. Enter a value in oxide wt% and the converter will automatically convert this value to µg/g. Note that the value in the *Fixed Composition* field changes when a new conversion is performed; there is no need to copy the value from one field to the other.
 
-Press the button _Apply standardisation_ to generate the compositional maps that will be available in the category _Quanti_ of the Primary Menu. The maps are expressed in µg/g of elements. You can convert them into wt% of oxides using the internal converter. Right-click on a quanti file and select the option _Convert_. Choose the conversion in the Converter Window.
+![Fixed composition calibration](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_LAICPMS_FixedC.png)
+
+*Figure 1: Calibration Assistant for LA-ICPMS data. Example of internal calibration of phengite using Si as internal standard and a reference composition of SiO2 = 51 wt%. The value of Si = 2.384e+05 µg/g has been automatically set in the "Fixed Composition" field. Two maps are displayed at the bottom: the k-matrix calculated using the internal standard and the calibrated map for Si expressed in µg/g.*
+
+Press the **Apply Standardisation** button to generate the compositional maps available in the *Quantity* category of the *Primary Menu*. The maps are expressed in µg/g of elements. You can convert them to wt% of oxides using the internal converter: right-click on a Quanti file and select *Convert*.
+
+::: tip
+After converting the maps, the name of the maps can be changed (this is not done by the converter).
+:::
 
 #### Case 2: Variable composition
 
-This mode is optimal for minerals that are zoned in all major elements (e.g. phengite). Average intensities of several ROI can be picked from the map and attributed to different compositions.
+This mode is optimal for minerals that are zoned in all major elements (e.g. phengite). Average intensities of several ROIs can be extracted from the map and assigned to different compositions.
 
-The button _Pick a ROI (circle)_ activates the mode to draw a ROI with a circle shape. Draw a circle on the map in a region showing a constant intensity.
+1. The **Pick a ROI (circle)** <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/icon_target.png" alt="Circle ROI" width="20" style="display: inline; vertical-align: middle;"> button activates the mode to draw a ROI with a circle shape. Draw a circle on the map in a region of constant intensity.
 
-Set the average composition in wt% of oxide in the _Internal Composition Converter_ tool. Then click in the table on the first and second row of Pt-1; values will be automatically added to the table.
+2. Set the average composition in wt% oxide in the *Internal Composition Converter* tool. Then click on the first and second row of **Pt-1** in the table; values are automatically added.
 
-Move the ROI to another area, for example with lower values in intensity/composition, adjust the value for wt% of oxide and click in both lines the table to create Pt-2.
+3. Move the ROI to another area (e.g. with lower intensity/composition values), adjust the value for wt% oxide, and click in both rows of the table to create **Pt-2**.
 
-Press the button _Apply standardisation_ to generate the compositional maps that will be available in the category _Quanti_ of the Primary Menu. The maps are expressed in µg/g of elements. You can convert them into wt% of oxides using the internal converter. Right-click on a quanti file and select the option _Convert_. Choose the conversion in the Converter Window. Note: After converting the maps, the name of the maps can be changed (this is not done by the converter).
+![Variable composition - Core](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_LAICPMS_VariableC1.png)
+
+*Figure 2: Example of internal calibration of phengite using Si as internal standard and a variable reference composition. A value of SiO2 = 52 wt% is assigned to the phengite core (Pt-1).*
+
+![Variable composition - Rim](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_LAICPMS_VariableC2.png)
+
+*Figure 3: Example with a value of SiO2 = 47 wt% assigned to the muscovite rim (Pt-2). Two maps are shown below: the k-matrix calculated using the internal standard with variable composition and the calibrated map for Si expressed in µg/g. Note that compared to Figure 1, Si is not homogeneous throughout the mica.*
+
+Press the **Apply Standardisation** button to generate the compositional maps available in the *Quantity* category of the *Primary Menu*. The maps are expressed in µg/g of elements. You can convert them to wt% of oxides using the internal converter: right-click on a Quanti file and select *Convert*.
+
+::: tip
+After converting the maps, the name of the maps can be changed (this is not done by the converter).
+:::
 
 ### Generate spider plots
 
 The button _Spider_ (Open Spider Module) opens the module Spider Plot. This button is only available when a quanti file or any map within a quanti file is selected in the primary menu.
 
-For more detailed information on the Spider Module, refer to the embedded documentation accessible from the module.
+For more detailed information on the Spider Module, see the dedicated [Spider Module](/doc-spider) page.
 
 
 

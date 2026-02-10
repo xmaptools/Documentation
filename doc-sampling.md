@@ -1,0 +1,99 @@
+# Sampling Tools
+
+*Based on XMapTools 4.5 embedded documentation – Help file version 14.01.2024*
+
+---
+
+This page describes the **Sampling Tools**. These tools are available at any stage of the data procedure and apply to the map shown in the main figure.
+
+The following sampling functions are available from the *Sampling* menu or from the Sampling section of the live output display, located below the live histogram:
+
+| Tool | Icon | Description |
+|------|------|-------------|
+| **Circle** | <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/icon_Shaded_Circle.png" alt="Circle" width="20" style="display: inline; vertical-align: middle;"> | Average value and standard deviation of selected pixels |
+| **Area (polygon)** | <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/icon_Shaded_Square.png" alt="Polygon" width="20" style="display: inline; vertical-align: middle;"> | Average value and standard deviation of selected pixels |
+| **Transect** | <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/icon_path4sampling.png" alt="Transect" width="20" style="display: inline; vertical-align: middle;"> | Composition/intensity changes along a path |
+| **Strip** | <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/icon_FocusHorizontal.png" alt="Strip" width="20" style="display: inline; vertical-align: middle;"> | Averaged compositional/intensity changes along a strip |
+
+Once a ROI has been selected, the results are displayed in the Sampling Viewer to the right of the main window. Data can be saved using the tools available in the Sampling menu under 'Save Results'. The 'Single Map' option saves data for the map selected from the primary menu, while the 'Multiple Map' option saves all element maps available in the selected data category. Data is automatically saved to an 'Exported-Sampling' folder in the working directory.
+
+
+## Circle
+
+Select *Sampling > Circle* from the main menu and draw a circle on the map by clicking on a location, holding the mouse down and dragging over an area. A crosshair cursor becomes available when the mouse pointer is over the map and the Sampling option is enabled.
+
+Once you have drawn the circle, click and hold one of the four filled dots inside the circle to change its size. Inside the circle a cross cursor can be used to move the position of the circle.
+
+::: tip
+If it is not possible to edit or move the ROI, select XMapTools, press Ctrl and try editing the ROI again.
+:::
+
+The result of the data extraction is shown by the green bar in the graph at the top right of the main window and the corresponding numbers immediately below. A histogram is also plotted using all the pixel data contained within the ROI.
+
+<br />
+<p align="center">
+<img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Sampling_Circle.png" alt="Circle sampling" width="700">
+</p>
+
+*Figure 1: Example sampling of an intensity map (Ca) using the circle shape. Note that in this example, the average value of the selected pixels (Nb = 774) is 1028 ± 35.24 (stdev).*
+
+
+## Area (Polygon)
+
+Select *Sampling > Area (Polygon)* from the main menu and draw a polygon on the map by clicking on several points. Click on the first point to close the polygon (a circle cursor appears).
+
+The polygon shape can be edited.
+
+<br />
+<p align="center">
+<img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Sampling_Polygon.png" alt="Polygon sampling" width="700">
+</p>
+
+*Figure 2: Example sampling of an intensity map (Ca) using the polygon shape. Note that in this example, the average value of the selected pixels (Nb = 774) is 999.8 ± 63.9 (stdev), but two plagioclase compositions are visible on the histogram (at 900 and 1030 counts).*
+
+
+## Transect
+
+Select *Sampling > Transect* from the main menu and draw a polygon on the map by clicking on several positions. Right-click to complete the selection. You must select at least two positions to obtain a valid transect.
+
+The resulting profile is shown in the live display in the category sampling (Fig. 3).
+
+The transect position can be edited and the plot will be updated automatically. Note that changing the colour bar boundaries will change the profile as the colours from the colour bar are used to plot the points.
+
+<br />
+<p align="center">
+<img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Sampling_Transect.png" alt="Transect sampling" width="700">
+</p>
+
+*Figure 3: Example of sampling an intensity map (Ca) using a transect starting at the point located to the left.*
+
+
+## Strip
+
+This tool is used to extract the mean and median profile from a rectangular strip, using the composition of each transect. For a given pixel on the central transect, the value is calculated as the mean and median of the pixel compositions perpendicular to the reference transect.
+
+Select *Sampling > Strip* from the main menu and draw a horizontal rectangle on the map by clicking on the corner position (top left), holding the mouse down and dragging over an area.
+
+To move the rectangle, position the cursor in the centre of the rectangle, left-click, hold and drag, and drop it into the new position.
+
+::: info
+The rectangle must be drawn with its extension horizontal. However, it can be rotated later by positioning the cursor on the perimeter of the rectangle, near one of its edges, and then activating the rotation cursor.
+:::
+
+Once the rectangle has been created (or edited), the plots in the Live Display Sampling category are updated. Two plots are available:
+- **Top:** Two curves — in red the median and in blue the mean
+- **Bottom:** All profiles used to generate the above plot are plotted in grey
+
+<br />
+<p align="center">
+<img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Sampling_Strip.png" alt="Strip sampling" width="700">
+</p>
+
+*Figure 4: Example sampling of an intensity map (Ca) using a strip from bottom left to top right.*
+
+<br />
+<p align="center">
+<img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Sampling_StripOrientation.jpg" alt="Strip orientation" width="700">
+</p>
+
+*Figure 5: Orientation of the sampling strip.*

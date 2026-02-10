@@ -33,7 +33,7 @@ features:
 
   - icon: 🚀
     title: Bingo-Antidote 
-    details: Step-by-step guides and documentation for using XMapTools
+    details: Step-by-step tutorial for using Bingo-Antidote in XMapTools
     link: /bingo-antidote
 ---
 
