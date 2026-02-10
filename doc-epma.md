@@ -309,51 +309,9 @@ After selecting all files for the spot analyses, press the button generate Stand
 
 
 
-## Generation of mosaics
-
-XMapTools can combine maps to create mosaics. There are two types of mosaic: _grid mosaic_, where the maps are stitched together in a grid, and _real mosaic_, where the maps are merged in the same coordinate system. 
-
-### Grid mosaic
-
-The Generate Mosaic (Grid) <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/198-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button allows multiple maps to be stitched together in a grid. Such a mosaic allows maps of individual grains to be combined on a single image, improving the visualisation of possible variations in composition. The original coordinates of each map are not retained. Spot analyses used as internal standards must have X and Y manually defined after the mosaic has been created using the XMapTools coordinate system. For an alternative option, see the second mosaic option below.
-
-Procedure for creating a mosaic using a predefined grid:
-
-- From the the main menu, set the working directory to a directory containing a Mosaic (case sensitive) folder: XMapTools > Set Working Directory
-- The Mosaic folder should contain a set of maps with the same elements in the same format (e.g. TXT or CSV, not a combination of the two). Each dataset must be stored in a separate subfolder and already be in the XMapTools format after conversion from the raw EPMA
-
- data. Note that the subfolder name is used to define the order of the map in the mosaic. Use folder names such as 01_Map34; 02_Map4; 03_Map1 to define the order before importing.
-- If a folder name starts with a minus symbol (−), the folder will be skipped and not imported when the mosaic is created
-- Important: The maps must have the same spatial resolution. If a map has a different spatial resolution, the resolution must first be adjusted manually. Note that XMapTools assumes that the maps have the same spatial resolution and does not check this during mosaic creation
-- Press the Generate Mosaic (Grid) button
-- Set the number of columns in the dialogue box
-- XMapTools generates the mosaic and saves the new maps in a new selected directory and change the edit the current working directory automatically.
-
-<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Mosaic_grid.jpg" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
-
-_Figure: This is an example of a mosaic grid for 13 maps, arranged in three columns (map: Pb in counts). This allows the maps to be merged and displayed with the same colour scale._  
-
-### Real mosaic
-
-The Generate Mosaic in Original Coordinate System <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/209-windows.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button merges several maps into a referenced system based on their original coordinates. It also calculates the coordinates of the new map for the Standards.txt file. This means that spot analyses from the same microprobe session can be provided directly and used to calibrate the mosaic.
-
-
-To create a referenced mosaic:
-
-- From the main menu, set the working directory to a directory containing a Mosaic (case sensitive) folder: XMapTools > Set Working Directory
-- The Mosaic folder should contain a set of maps with exactly the same elements. Each dataset must to be stored in a separate subfolder. Note that the subfolder name is used to define the order of the map in the mosaic. Use folder names such as 01_Map34; 02_Map4; 03_Map1 to define the order before importing. Each folder must contain a Standards.txt file containing the map coordinates. If a Classification.txt file exists, it will be skipped.
-- The spatial resolution of each map is automatically adjusted to the settings of the map with the higher spatial resolution. Resampling is performed using a linear interpolator for raster data.
-- Press the Generate Mosaic in Original Coordinate System button
-- XMapTools generates the mosaic, saves the maps in the working directory, generates a file Standards.txt containing only the first block with the map coordinates. The order of the oxides (second block) and the analyses (third block) must be added manually.
-
-<img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Figures/Mosaic_real.jpg" alt="image" style="max-width: 80%; height: auto; display: block; margin: 0 auto;"> 
-
-_Figure: This is an example of a real mosaic for 3 maps, arranged using the map coordinates (map: Al2O3 in et%)._  
-
-
 ## Importing data using the import module
 
-To import map data in XMapTools, select the 'Project and Import' tab and press the 'Import Maps' <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button located in 'Import Maps and Images'. This will open the import module and prompt you to select files. 
+To import map data in XMapTools, select the 'Project and Import' tab and press the **Import Maps** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button located in 'Import Maps and Images'. This will open the import module and prompt you to select files. 
 
 Select the set of map files you want to import. Choose compatible files from the 'Pick Map File(s)' pop-up window. Note that multiple files can be selected at once. Any selected file that cannot be imported due to an incompatible format, for example, will be skipped during import.
 
@@ -424,17 +382,17 @@ _Figure: Data conversion tool. In this example data are converted from element w
 
 #### Step 3.1: Create a training set
 
-Display a map from the imported dataset using the Primary Menu and open the Classify tab. Select Training Set (Classification) in the Secondary Menu and press the _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;">  button in Classify and select the phases. Press again the _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to create a new mask definition in the training set. This operation can be repeated until the correct number of phases is reached. Each mask definition can be deleted by right-clicking on the name and selecting _Delete_.
+Display a map from the imported dataset using the Primary Menu and open the Classify tab. Select Training Set (Classification) in the Secondary Menu and press the **Add** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button in Classify and select the phases. Press again the **Add** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to create a new mask definition in the training set. This operation can be repeated until the correct number of phases is reached. Each mask definition can be deleted by right-clicking on the name and selecting _Delete_.
 
-You can rename each mask definition by double-clicking on his name in the Secondary Menu. Press _Add_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> in Classify when a mask definition is selected to add a region-of-interest (ROI).
+You can rename each mask definition by double-clicking on his name in the Secondary Menu. Press **Add** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/056-plus.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> in Classify when a mask definition is selected to add a region-of-interest (ROI).
 
 #### Step 3.2: Add maps for classification
 
-Select the dataset in the category Merged of the Primary Menu and press the _Add Maps for Classification_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to add all the maps of the dataset in the list that will be used by the classification function.
+Select the dataset in the category Merged of the Primary Menu and press the **Add Maps for Classification** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/323-add.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button to add all the maps of the dataset in the list that will be used by the classification function.
 
 #### Step 3.3: Classification
 
-Select a dataset in the _Merged_ category of the Primary Menu and a _Training Set_ in the Secondary Menu. Pick an algorithm in the tab Classify and press the _Classify_ <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/044-repeat.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button. Note that the Classify button is only available when an appropriate dataset and training set are selected in the primary and secondary menus.
+Select a dataset in the _Merged_ category of the Primary Menu and a _Training Set_ in the Secondary Menu. Pick an algorithm in the tab Classify and press the **Classify** <img src="https://raw.githubusercontent.com/xmaptools/Documentation_Images/main/Icons/044-repeat.png" alt="image" width="20" style="display: inline; vertical-align: middle;"> button. Note that the Classify button is only available when an appropriate dataset and training set are selected in the primary and secondary menus.
 
 ### Step 4: Splitting a merged dataset using a maskfile
 
@@ -454,6 +412,12 @@ _Figure: Results are stored in the category Quanti_
 
 
 ## Classification
+
+Compositional map classification is the process of categorising and labelling groups of pixels within a dataset based on their composition. It generates a mask image showing the distribution of each mask/class (i.e. features can be mineral/epoxy/glass, etc.).
+
+![Classification mask image example](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Classification_MaskImage.png)
+
+*Figure: Example of mask image for a metapelite from the Himalaya published in Lanari & Duesterhoeft (2019). Each feature (mineral) is shown with a colour. Note that all the pixels of this image have been classified.*
 
 ### Classification parameters & algorithms
 
@@ -493,6 +457,12 @@ A training set must be selected in the secondary menu in order to activate the c
 
 The button _Classify_ (Train a Classifier & Classify) trains a new classifier and performs the classification using the algorithm selected in the menu and the specified set of maps.
 
+A new figure containing up to four plots will open and be continuously updated during classification. Do not close this figure until the classification is complete, otherwise the plots will not be displayed.
+
+![Classification plots](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Classification_PlotsRF.png)
+
+*Figure: Plots for classification using the Random Forest algorithm. Top left: out-of-bag classification error vs. number of trees grown. Top right: Predictor importance. Bottom left: Confusion map of the training data set. Bottom right: Confusion plot of the test dataset.*
+
 Once the classification is achieved, a new mask file is generated and stored under _Mask files_ in the secondary menu. The mask file is automatically selected and the mask image displayed in the main figure.
 
 ### Filtering options
@@ -517,6 +487,10 @@ The following ROI shapes are available:
 - **Polygon**: click successively on the image to draw a polygon; right-clicking validates and closes automatically the shape
 
 The button _Plot Compositions_ generates a plot using the data selected in the primary menu (either intensity, or a merged map) and the mask file selected in the secondary menu.
+
+![Composition plot](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Classification_CompPlot.png)
+
+*Figure: Example of compositional plot generated using a merged map (expressed in oxide wt%) and a mask file.*
 
 
 ## Calibration (EPMA)
@@ -595,56 +569,86 @@ For more detailed information on the Calibration Assistant, refer to the embedde
 
 ### Calibration assistant (EPMA)
 
-The new approach implemented in XMapTools 4 provides a module for auto multi-phase calibration.
+The new approach implemented in XMapTools 4 provides a module for automatic multi-phase calibration. The general procedure is described in De Andrade et al. (2006) and an advanced approach including pseudo-background correction is described in Lanari et al. (2019).
 
 #### Strategy: advantages and pitfalls
 
-An auto calibration is performed considering all spot analyses and all masks when you press the button _Calibrate_. The new algorithm performs first a general fit including all standards and then adjusts the calibration for each mineral. All calibration curves, including those for the general fit are accessible via the tree menu.
+An automatic calibration is performed taking into account all spot analyses and all masks when the *Calibrate* button is pressed. The new algorithm first performs a **general fit** including all standards and then adjusts the calibration for each mineral. All calibration curves, including those for the general fit, are accessible from the tree menu.
 
-If you press the button _Apply Standardization_, all calibrated maps, for each mineral as well as a merged map are created and sent back to XMapTools. It seems magic, but it is not, so first make sure that you check the quality of the calibration curves determined by the auto function.
+When you press the *Apply Standardisation* button, all the calibrated maps for each mineral as well as a merged map are created and sent back to XMapTools.
 
-The auto function works if all minerals have been measured with at least a few spot analyses and if there is at least one mineral with a composition above 1 wt% for each element. If a mineral or other feature (e.g. fracture) has no spot analyses, the program extrapolates a calibration from the general fit, therefore "predicting" a composition. At this stage, this composition is likely to be wrong because matrix effects are ignored!
+::: warning Important
+First **make sure you check the quality of the calibration curves** generated by the auto function!
+:::
 
-If you close the Calibration Assistant window, neither calibrated data nor calibration settings are saved. If you press _Apply Standardisation_, all maps are sent to XMapTools.
+The automatic function will work if all minerals have been measured with at least a few spot analyses and if there is at least one mineral with a composition above 1 wt% for each element. If a mineral or other feature (e.g. fracture) has no spot analyses, the program extrapolates a calibration from the general fit and thus "predicts" a composition. At this stage **this composition is likely to be off because matrix effects are ignored!**
+
+::: info
+- If you close the Calibration Assistant window, no calibrated data or calibration settings will be saved.
+- When you press *Apply Standardisation*, all maps are sent to XMapTools.
+:::
 
 #### Displaying calibration curves
 
-Use the tree menu located on the left side to navigate through the list of minerals and elements and to display calibration curves.
+The *Calibration Assistant for EPMA Data* opens when the *Calibrate* button in XMapTools is pressed.
 
-If you select a mineral in the tree menu, a single map showing the sum of elements/oxides (total wt%) is displayed. The plot in the central part shows all calibration curves, for all the elements of the selected mineral. Some data are shown in a table:
+![Calibration EPMA overview](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_EPMA.png)
 
-- **El.**: shows the element name (of the map), the total of the median mineral composition considering all pixels (sum(wt%)) and the total of the peak position (Peak(SumOx))
-- **#(std)**: shows the number of internal standards used for calibrating this phase
-- **med(it)**: shows the median intensity value of the selected mineral for each element
-- **med(wt)_s**: shows the median standard composition (spot analyses)
-- **peak(wt)_m**: shows the median composition of the calibrated map
-- **k-factor**: quantifies the difference between the calibration obtained during the general fit and the final calibration of the selected mineral. A value of 1 means that both are identical
-- **Slope**: of the calibration curve of each element
-- **Background**: value for each element
+*Figure: Example calibration for a clinopyroxene-garnet amphibolite metapelite of the Brasília orogen (Brazil), published in Tedeschi et al. (2017). Note that the calibration curves for all minerals are displayed when the window pops up.*
 
-To display a specific calibration curve (for a given element), unfold the menu by clicking on the small arrow on the left side of the mineral name and select an element. The corresponding calibration curve is displayed as well as the correspondent quantitative map (oxide wt%).
+Use the tree menu on the left to navigate through the list of minerals and elements and to view calibration curves.
+
+When you select a mineral from the tree menu, a single plot showing the sum of elements/oxides (total wt%) is displayed. The plot in the middle shows all calibration curves, for all elements of the selected mineral. Some data is displayed in a table:
+
+| Column | Description |
+|---|---|
+| **El.** | Element name (of the map); includes sum(wt%) and Peak(SumOx) labels |
+| **#(std)** | Number of internal standards (spot analyses) used to calibrate the phase |
+| **med(it)** | Median intensity value for all pixels of the selected mineral for each element |
+| **med(wt)_s** | Median composition of all internal standard measurements (spot analyses) |
+| **mode(wt)_m** | Most common composition in the calibrated pixels |
+| **k factor** | Difference between the general fit calibration and the final mineral calibration (1 = identical) |
+| **Slope** | Slope of the calibration curve |
+| **Background** | Intercept of the calibration curve |
+
+::: tip
+The values of `mode(SumOx)` and `Sum(wt)` may be different, in which case the median is likely to be influenced by non-Gaussian signals and may not be comparable with the median of the spot analyses. The comparison of both columns can be used to detect potential calibration problems.
+:::
+
+![Calibration EPMA mineral selected](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_EPMA_2.png)
+
+*Figure: Example of calibration when a mineral is selected. All calibration curves for a given mineral are displayed.*
+
+To view a specific calibration curve (for a particular element), expand the menu by clicking on the small arrow to the left of the mineral name and select an element. The corresponding calibration curve is displayed together with the corresponding quantitative map (oxide wt-%).
+
+![Calibration EPMA element selected](https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/Calibration_EPMA_3.png)
+
+*Figure: Example when an element of a given mineral phase is selected. The calibration curve and quantitative map for a given element are displayed.*
 
 #### Adjusting a calibration curve
 
-When an element is selected the button _Adjust_ appears above the tree menu. Clicking on this button displays two fields containing the values for background and slope. Values can be changed manually by typing new values in the corresponding field. Press enter to calculate and display the new calibration curve on the plot (this operation can take a few seconds).
+When an element is selected, the **Adjust** <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/SS_Calibration_EPMA_Adjust.png" alt="Adjust" width="20" style="display: inline; vertical-align: middle;"> button appears above the tree menu.
+
+Clicking this button displays two fields containing the values for **background** and **slope**: <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/SS_Calibration_EPMA_slopeandbackground.png" alt="Slope and background" width="20" style="display: inline; vertical-align: middle;">
+
+Values can be changed manually by entering new values in the appropriate field. Press **Enter** to calculate and display the new calibration curve on the graph (this operation may take a few seconds).
 
 #### Displaying results of the general fit
 
-By selecting the _General fit_ (last option in the tree menu), a plot with the calibration curves for all the elements is displayed. No adjustment on the calibration curves in the general fit is possible. This fit is automatically performed first by the program and no longer used once the calibration of each mineral is achieved.
+Selecting *General Fit* (last option in the tree menu) will display a plot of the calibration curves for all elements. It is not possible to adjust the calibration curves in the general fit. This fit is automatically performed first by the program and is no longer used once the calibration of each mineral has been achieved.
 
 #### Apply calibration
 
-After checking each calibration curve and adjusting if necessary, use the button _Apply standardization_ to generate the calibrated maps.
+After checking each calibration curve and adjusting if necessary, use the **Apply Standardisation** button <img src="https://raw.githubusercontent.com/xmaptools/XMapTools_Public/main/Program/Dev/help/img/SS_Calibration_EPMA_Apply.png" alt="Apply" width="20" style="display: inline; vertical-align: middle;"> to generate the calibrated maps.
 
-By applying the standardisation, the option _Quanti_ in the Primary Menu becomes available. There, the quantitative maps in element/oxide wt% of each phase can be displayed.
-
-The option _Merged_ in the Primary Menu also becomes available after the standardisation. A set of merged maps (i.e., quantitative maps in oxide wt% for all the phases considered together) is automatically generated.
+By applying the standardisation:
+- The **Quanti** option in the *Primary Menu* becomes available, where quantitative maps in element/oxide wt-% of each phase can be displayed.
+- The **Merged** option in the *Primary Menu* also becomes available. A set of merged maps (i.e. quantitative maps in oxide wt-% for all phases considered together) is automatically generated.
 
 #### Notes
 
-Red spots show outliers that are not considered in the calculation of the calibration curves.
-
-By hovering the cursor on the images, an image menu will appear on the upper right. This menu includes options to zoom, save and copy the images.
+- Red dots indicate outliers that were not included in the calculation of the calibration curves.
+- Moving the cursor over the images brings up a *Image Menu* at the top right. This menu includes options to zoom, save and copy the images.
 
 ### Local bulk compositions
 

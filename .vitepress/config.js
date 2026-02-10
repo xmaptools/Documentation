@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "XMapTools 4.5 Documentation",
+  title: "XMapTools 4.5 Doc",
   description: "Free and versatile software solution for chemical maps analysis",
   base: "/Documentation/",
   
@@ -18,12 +18,20 @@ export default defineConfig({
           { text: 'Starting XMapTools', link: '/getting-started-2' },
         ]
       },
+      { text: 'Workspaces', items: [
+          { text: 'Project & Import', link: '/doc-project-import' },
+          { text: 'Options', link: '/doc-options' },
+          { text: 'Spot Data', link: '/doc-spot-data' },
+          { text: 'CT Segmentation', link: '/doc-segment' },
+          { text: 'Add-ons', link: '/doc-addons' },
+        ]
+      },
       { text: 'EPMA', items: [
           { text: 'EPMA', link: '/doc-epma' },
           { text: 'Data compatibility', link: '/doc-epma#data-compatibility-for-epma' },
           { text: 'Data conversion', link: '/doc-epma#data-conversion-for-epma' },
-          { text: 'Generation of mosaics', link: '/doc-epma#generation-of-mosaics' },
           { text: 'Importing calibrated data', link: '/doc-epma#importing-calibrated-data-from-epma-and-sem' },
+          { text: 'Calibration Assistant', link: '/doc-epma#calibration-assistant-epma' },
         ]
       },
       { text: 'LA-ICP-MS', items: [
@@ -32,11 +40,23 @@ export default defineConfig({
           { text: 'Converter for LA-ICP-MS data', link: '/doc-laicpms#converter-for-la-icp-ms-data' },
           { text: 'Log generator module', link: '/doc-laicpms#log-generator-module' },
           { text: 'Calibration', link: '/doc-laicpms#calibration' },
+          { text: 'Calibration Assistant', link: '/doc-laicpms#calibration-assistant-la-icpms' },
         ]
       },
-      { text: 'External Functions', link: '/doc-ext-functions' },
-      { text: 'Tutorials', link: '/tutorials' },
-      { text: 'Videos', link: '/videos' }
+      { text: 'Tools', items: [
+          { text: 'Data Visualization', link: '/doc-visualization' },
+          { text: 'Images', link: '/doc-images' },
+          { text: 'Sampling Tools', link: '/doc-sampling' },
+          { text: 'Spider Module', link: '/doc-spider' },
+          { text: 'Import Maps', link: '/doc-import-maps' },
+          { text: 'External Functions', link: '/doc-ext-functions' },
+        ]
+      },
+      { text: 'Learn', items: [
+          { text: 'Tutorials', link: '/tutorials' },
+          { text: 'Videos', link: '/videos' },
+        ]
+      }
     ],
 
     sidebar: [
@@ -49,13 +69,22 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Workspaces',
+        items: [
+          { text: 'Project & Import', link: '/doc-project-import' },
+          { text: 'Options', link: '/doc-options' },
+          { text: 'Spot Data', link: '/doc-spot-data' },
+          { text: 'CT Segmentation', link: '/doc-segment' },
+          { text: 'Add-ons', link: '/doc-addons' },
+        ]
+      },
+      {
         text: 'Documentation',
         items: [
           { text: 'EPMA', link: '/doc-epma',
             items: [
               { text: 'Data compatibility', link: '/doc-epma#data-compatibility-for-epma' },
               { text: 'Data conversion', link: '/doc-epma#data-conversion-for-epma' },
-              { text: 'Generation of mosaics', link: '/doc-epma#generation-of-mosaics' },
               { text: 'Importing calibrated data', link: '/doc-epma#importing-calibrated-data-from-epma-and-sem' },
               { text: 'Classification', link: '/doc-epma#classification' },
               { text: 'Calibration (EPMA)', link: '/doc-epma#calibration-epma' },
@@ -69,6 +98,17 @@ export default defineConfig({
               { text: 'Calibration', link: '/doc-laicpms#calibration' },
             ]
           },
+
+        ]
+      },
+      {
+        text: 'Tools',
+        items: [
+          { text: 'Data Visualization', link: '/doc-visualization' },
+          { text: 'Images', link: '/doc-images' },
+          { text: 'Sampling Tools', link: '/doc-sampling' },
+          { text: 'Spider Module', link: '/doc-spider' },
+          { text: 'Import Maps', link: '/doc-import-maps' },
           { text: 'External Functions', link: '/doc-ext-functions',
             items: [
               { text: 'Structural formulas', link: '/doc-ext-functions#structural-formulas' },
