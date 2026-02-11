@@ -32,7 +32,7 @@ This guide covers how to install and update XMapTools 4.5 and future releases on
 
 > **Note:** The MATLAB Runtime is installed automatically during a full installation. You do not need a MATLAB licence.
 
-> **Compatibility:** XMapTools 4.5 requires MATLAB Runtime 25.1. Older versions of the Runtime (e.g. v99, or v912) can be [deleted](#delete-old-runtime-libraries) after updating to XMapTools 4.5.
+> **Compatibility:** XMapTools 4.5 for Apple Silicon Macs requires MATLAB Runtime 25.1. XMapTools 4.5 for Windows and Intel-based Macs requires MATLAB Runtime v99 (R2020b). The older Runtime v912 can be safely deleted after updating to XMapTools 4.5. On Apple Silicon Macs, v99 can also be [deleted](#delete-old-runtime-libraries).
 
 > **Security:** The code executed by the install command is available at [https://xmaptools.ch/install.sh](https://xmaptools.ch/install.sh) (macOS) and [https://xmaptools.ch/install.ps1](https://xmaptools.ch/install.ps1) (Windows). Do not use any other domain name. The `xmaptools.ch` domain is official and the only domain used to distribute XMapTools. If you are behind a firewall that blocks access, ask your system administrator to allow HTTPS traffic to this domain.
 
@@ -90,7 +90,7 @@ curl -fsSL https://xmaptools.ch/install.sh | bash -s -- --install Intel
 
 An update replaces the XMapTools application bundle **without reinstalling** the MATLAB Runtime. This is faster than a full installation and preserves your runtime setup.
 
-> **Prerequisite:** XMapTools must already be installed in `/Applications/XMapTools`.
+> **Prerequisite:** XMapTools 4.5 or a more recent version running with Runtime 25.1 (Apple Silicon) or v99 (Intel) must already be installed in `/Applications/XMapTools` and **must be closed**.
 
 **Auto-detect architecture (recommended):**
 
@@ -167,6 +167,15 @@ iex "& { $(irm https://xmaptools.ch/install.ps1) } --install"
 2. The installer archive is downloaded and extracted to a temporary directory.
 3. The graphical installer (`XMapToolsInstaller_Windows.exe`) is launched — follow the on-screen instructions to complete the setup.
 
+**Graphical installer steps (Windows):**
+
+1. Press **Next**.
+2. Leave the default installation folder `Program Files/XMapTools` to allow automatic updates in the future and press **Next**.
+3. Leave the default installation folder for the Runtime `Program Files/MATLAB/MATLAB_Runtime` and press **Next**.
+4. Click **Begin Install** to install XMapTools and download the Runtime (~3 GB).
+5. Press **Close** when the installation is complete.
+6. You can now start XMapTools using `XMapTools.exe`.
+
 ### Update Only (Windows)
 
 An update replaces the XMapTools executable and splash screen **without reinstalling** the MATLAB Runtime.
@@ -220,8 +229,8 @@ If the runtime is missing, a full installation (`--install`) is required.
 
 | Runtime version | Platform |
 |---|---|
-| `v99` (R2020b) | macOS Intel |
-| `R2025a` | macOS Apple Silicon (native), Windows |
+| `v99` (R2020b) | macOS Intel, Windows |
+| `R2025a` | macOS Apple Silicon (native) |
 
 ### macOS: "app is damaged" or Gatekeeper warning
 
@@ -240,6 +249,17 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
 Then re-run the installation or update command.
+
+### Windows: MATLAB Runtime 2025a conflict
+
+If you already have MATLAB Runtime 2025a (R2025a) installed on your computer, you may receive an error message stating that the installer cannot connect to the MATLAB server. If this happens, open a Command Prompt window (`cmd`) as an administrator (right-click and select *Run as administrator*), then run:
+
+```cmd
+cd C:\Program Files\MATLAB\MATLAB_Runtime
+rmdir /s R2025a
+```
+
+Then re-run the XMapTools installation.
 
 ### Windows: permission denied
 
@@ -280,9 +300,11 @@ To fully uninstall XMapTools on Windows:
 
 ## Delete Old Runtime Libraries
 
-After upgrading to XMapTools 4.5, older MATLAB Runtime versions (v99, v912) are no longer needed and can be safely removed to free disk space.
+After upgrading to XMapTools 4.5 on an **Apple Silicon Mac**, the older MATLAB Runtime versions (v99, v912) are no longer needed and can be safely removed to free disk space.
 
-**macOS:**
+> **Note:** On **Windows** and **Intel Macs**, MATLAB Runtime v99 is still required. Do not delete it on these platforms.
+
+**macOS (Apple Silicon only):**
 
 ```bash
 sudo rm -rf /Applications/MATLAB/MATLAB_Runtime/v99
