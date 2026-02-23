@@ -34,24 +34,6 @@ Contributions to improve or extend the documentation are welcome. Please follow 
    ```
    The site will be available at `http://localhost:5173/Documentation/`. Changes to `.md` files are reflected live in the browser.
 
-### Repository Structure
-
-```
-.
-├── index.md                  # Home page
-├── getting-started.md        # Getting started guide
-├── installation_guide.md     # Installation instructions
-├── doc-epma.md               # EPMA documentation
-├── doc-laicpms.md            # LA-ICP-MS documentation
-├── bingo-antidote.md         # Bingo-Antidote documentation
-├── tutorials.md              # Tutorials
-├── videos.md                 # Video resources
-├── .vitepress/               # VitePress configuration and theme
-│   ├── config.js             # Site configuration (nav, sidebar, ...)
-│   └── theme/                # Custom theme overrides
-└── package.json
-```
-
 ### Writing and Editing Content
 
 - All documentation pages are written in **Markdown** (`.md` files) at the root of the repository.
