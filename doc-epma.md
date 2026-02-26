@@ -3,15 +3,13 @@
 ## Table of contents
 
 __EPMA & SEM__:
-- [Data compatibility (EPMA)](#data-compatibility-for-epma)
+- [Data compatibility](#data-compatibility)
   - [CAMECA](#cameca-microprobes)
     - [Maps](#cameca-maps)
     - [Spot analyses](#spot-analyses)
-- [Data conversion](#data-conversion-for-epma)
-  - [EPMA converter module](#epma-converter-module)
-- [Generation of mosaics](#generation-of-mosaics)
-  - [Grid mosaic](#grid-mosaic)
-  - [Real mosaic](#real-mosaic)
+- [Raw data conversion to XMapTools format](#raw-data-conversion-to-xmaptools-format)
+  - [EPMA converter module](#automated-data-convertion-using-the-epma-converter-module)
+  - [Manual data conversion](#manual-data-conversion)
 - [Importing data](#importing-data-using-the-import-module)
 - [Importing calibrated data (EPMA & SEM)](#importing-calibrated-data-from-epma-and-sem)
   - [Step 1: Adding calibrated maps](#step-1-adding-calibrated-maps)
@@ -30,7 +28,7 @@ __EPMA & SEM__:
   - [Local bulk compositions](#local-bulk-compositions)
 
 
-## Data compatibility for EPMA
+## Data compatibility
 
 ### CAMECA microprobes
 
@@ -257,19 +255,19 @@ DataSet/Point	Na	Mg	Al	Si	K 	Ca	Ti	Cr	Mn	Fe	O 	Total	Na	Mg	Al	Si	K 	Ca	Ti	Cr	Mn	
 
 
 
+## Raw data conversion to XMapTools format
 
-## Data conversion for EPMA
-
-The EPMA converter can be used to convert raw data for supported instruments to XMapTools format. 
+The EPMA converter module can be used to convert raw data for supported instruments to XMapTools format. 
 
 The following data formats are currently supported:
 - JEOL (WIN) JEOL microprobes running on WINDOWS. 
 - JEOL (SUN) JEOL microprobes running on SUN-OS.
 - CAMECA for recent CAMECA microprobes ([see format description](#cameca-microprobes)).
 
+If the converter module is not used, the data must be converted manually (see [manual import](#manual-data-conversion)).
 
 
-### EPMA converter module
+### Automated data convertion using the EPMA converter module
 
 The converter can be accessed via Project and Imports, using the _Open XMapTools' EPMA_ Converter button.
 
@@ -306,6 +304,50 @@ After selecting the maps, press the _Validate map selection_ button to continue.
 #### Step 4: Import spot analyses (internal standards)
 
 After selecting all files for the spot analyses, press the button generate Standards.txt. This will end the procedure and close the Converter. Note that when you return in XMapTools, the working directory has been adjusted and you can start importing your maps.
+
+
+
+### Manual data conversion
+
+Map files must have a .txt, .asc, .dat or .csv extension, no header, and a name compatible with
+the default names of XMapTools which are available [here](https://github.com/xmaptools/XMapTools_Public/blob/main/Program/Dev/XMap_Def_Element.txt) for elements and [here](https://github.com/xmaptools/XMapTools_Public/blob/main/Program/Dev/XMap_Def_Oxide.txt) for oxides. 
+
+The Standards.txt file must contain the information required to import the spot analyses to be used as internal standards. This file must contain the following:
+- The map coordinates.
+- The definition of the oxide/element order for the spot analyses, including the X and Y coordinates. 
+- The spot analyses used for standardisation (see the example below). 
+
+The map coordinates must be listed on a single line below the keyword >1, and the oxide order must be listed on a single line below the keyword >2. The X and Y labels must be the last two labels listed, and must be listed in this specific order. The analyses of the internal standards are listed below the keyword >3, which corresponds to the oxide order defined above (keyword >2).
+
+```
+>1 Here paste the image coordinates ( Xmin Xmax Ymin Ymax)
+56.739 57.239 43.691 43.371
+
+>2 Here define the oxides order (including coordinates)
+SiO2 MgO FeO Al2O3 X Y
+
+>3 Here paste the analyses
+25.4800 11.2600 29.0500 21.1400 1.4800 68.310 39.999
+52.9400 3.5300 3.0200 24.2300 0.0197 68.331 39.535
+52.5800 3.6300 2.7900 24.7200 0.0195 68.338 39.511
+```
+
+
+The map coordinates are defined as follows: Xmin Xmax Ymin Ymax. 
+
+Ymin and Ymax are switched because the Y-axis is reversed. For example, for a map with 1,000 columns (X) and 500 rows (Y), the XMapTools coordinate system would be defined as follows:  
+```
+>2
+1 1000 500 1 
+```
+This enables the coordinates obtained from XMapTools to be set for specific spot analyses. 
+
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin: 10px 0;">
+<strong>⚠️ Warning:</strong> In this version of XMapTools it is only possible to import one Standards.txt file with one coordinate system. 
+</div>
+
+
+
 
 
 

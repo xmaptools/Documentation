@@ -28,8 +28,8 @@ export default defineConfig({
       },
       { text: 'EPMA', items: [
           { text: 'EPMA', link: '/doc-epma' },
-          { text: 'Data compatibility', link: '/doc-epma#data-compatibility-for-epma' },
-          { text: 'Data conversion', link: '/doc-epma#data-conversion-for-epma' },
+          { text: 'Data compatibility', link: '/doc-epma#data-compatibility' },
+          { text: 'Data conversion', link: '/doc-epma#raw-data-conversion-to-xmaptools-format' },
           { text: 'Importing calibrated data', link: '/doc-epma#importing-calibrated-data-from-epma-and-sem' },
           { text: 'Calibration Assistant', link: '/doc-epma#calibration-assistant-epma' },
         ]
@@ -83,8 +83,8 @@ export default defineConfig({
         items: [
           { text: 'EPMA', link: '/doc-epma',
             items: [
-              { text: 'Data compatibility', link: '/doc-epma#data-compatibility-for-epma' },
-              { text: 'Data conversion', link: '/doc-epma#data-conversion-for-epma' },
+              { text: 'Data compatibility', link: '/doc-epma#data-compatibility' },
+              { text: 'Data conversion', link: '/doc-epma#raw-data-conversion-to-xmaptools-format' },
               { text: 'Importing calibrated data', link: '/doc-epma#importing-calibrated-data-from-epma-and-sem' },
               { text: 'Classification', link: '/doc-epma#classification' },
               { text: 'Calibration (EPMA)', link: '/doc-epma#calibration-epma' },
