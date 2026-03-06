@@ -5,6 +5,9 @@ export default defineConfig({
   title: "XMapTools 4.5 Doc",
   description: "Free and versatile software solution for chemical maps analysis",
   base: "/Documentation/",
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/Documentation/assets/Logo_2025_square_512.png' }]
+  ],
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
